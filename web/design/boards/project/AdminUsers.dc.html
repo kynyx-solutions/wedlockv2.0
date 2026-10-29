@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock admin — Users &amp; roles</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}
+input,button,select{font:inherit}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 15px; line-height: 1.5; color: #23271F; background: #F6F4EE; min-height: 100vh; display: flex; flex-wrap: wrap">
+<dc-import name="AdminSidebar" active="users" hint-size="256px,1000px"></dc-import>
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; color: #4E5548">Settings</span>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 44px; line-height: 1.05">Users &amp; roles</h1>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+<section style="flex: 999 1 520px; min-width: 0; background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 8px 22px; overflow-x: auto">
+<table style="width: 100%; min-width: 560px; border-collapse: collapse; font-size: 14px">
+<thead><tr style="text-align: left; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #4E5548"><th style="padding: 12px 8px 10px 0; font-weight: 600">Person</th><th style="padding: 12px 8px 10px; font-weight: 600">Role</th><th style="padding: 12px 8px 10px; font-weight: 600">Office</th><th style="padding: 12px 0 10px 8px; font-weight: 600">Last active</th></tr></thead>
+<tbody>
+<sc-for list="{{users}}" as="u" hint-placeholder-count="5">
+<tr style="border-top: 1px solid #ECEAE2"><td style="padding: 12px 8px 12px 0"><strong style="font-weight: 600">{{u.name}}</strong><div style="font-size: 12px; color: #4E5548">{{u.email}}</div></td><td style="padding: 12px 8px">{{u.role}}</td><td style="padding: 12px 8px">{{u.office}}</td><td style="padding: 12px 0 12px 8px; color: #4E5548">{{u.last}}</td></tr>
+</sc-for>
+</tbody>
+</table>
+</section>
+
+<section style="flex: 1 1 300px; background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 24px">Invite someone</h2>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Email<input type="email" placeholder="name@wedlock.co.in" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 10px; font-size: 14px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Role<select style="border: 1px solid #DAD7CC; background: #FFFFFF; border-radius: 2px; padding: 10px; font-size: 14px"><option>Planner</option><option>Customer support</option><option>Editor</option><option>Admin (owner)</option></select></label>
+<a href="#" style="text-decoration: none; text-align: center; background: #23271F; color: #F6F4EE; padding: 12px; border-radius: 2px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">Send invite</a>
+</section>
+</div>
+
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 8px 22px 14px; overflow-x: auto">
+<table style="width: 100%; min-width: 640px; border-collapse: collapse; font-size: 14px">
+<caption style="text-align: left; padding: 14px 0 8px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px">What each role can do</caption>
+<thead><tr style="text-align: left; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #4E5548"><th style="padding: 10px 8px 10px 0; font-weight: 600">Area</th><th style="padding: 10px 8px; font-weight: 600">Admin (owner)</th><th style="padding: 10px 8px; font-weight: 600">Planner</th><th style="padding: 10px 8px; font-weight: 600">Editor</th><th style="padding: 10px 0 10px 8px; font-weight: 600">Customer support</th></tr></thead>
+<tbody>
+<sc-for list="{{matrix}}" as="m" hint-placeholder-count="6">
+<tr style="border-top: 1px solid #ECEAE2"><td style="padding: 10px 8px 10px 0; font-weight: 600">{{m.area}}</td><td style="padding: 10px 8px">{{m.a}}</td><td style="padding: 10px 8px">{{m.p}}</td><td style="padding: 10px 8px">{{m.e}}</td><td style="padding: 10px 0 10px 8px">{{m.s}}</td></tr>
+</sc-for>
+</tbody>
+</table>
+</section>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1000}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+users: [
+{ name: 'Syed Aabish Hassan', email: '[email]@wedlock.co.in', role: 'Admin (owner)', office: 'Patna', last: 'now' },
+{ name: 'Rahul Ranjan', email: '[email]@wedlock.co.in', role: 'Planner', office: 'Patna', last: '1 hour ago' },
+{ name: 'Aliwaris Khan', email: '[email]@wedlock.co.in', role: 'Planner', office: 'New Delhi', last: 'yesterday' },
+{ name: '[Support name]', email: '[email]@wedlock.co.in', role: 'Customer support', office: 'Patna', last: '20 min ago' },
+{ name: '[Content writer]', email: '[email]', role: 'Editor', office: 'Remote', last: 'last week' }
+],
+matrix: [
+['New enquiries (inbox)', 'Full', 'Own leads', '—', 'Reply, log calls, assign to a planner'],
+['Lead pipeline & proposals', 'Full', 'Own leads', '—', 'View stage only'],
+['Messages to couples', 'Full', 'Own leads', '—', 'Yes, from templates'],
+['Messages to vendors', 'Full', 'Own events', '—', '—'],
+['Events & vendors', 'Full', 'Own events', '—', 'View dates only'],
+['Stories, journal, media', 'Full', 'View', 'Write & publish', '—'],
+['Packages & prices', 'Full', 'View', '—', 'View'],
+['Site content', 'Full', '—', 'Edit text', '—'],
+['Users, export, delete client data', 'Full', '—', '—', '—']
+].map(([area, a, p, e, s]) => ({ area, a, p, e, s }))
+};
+}
+}
+</script>
+</body>
+</html>

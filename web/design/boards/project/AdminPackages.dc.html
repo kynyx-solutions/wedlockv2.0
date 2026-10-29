@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock admin — Packages &amp; add-ons</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}
+input,button,select,textarea{font:inherit}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 15px; line-height: 1.5; color: #23271F; background: #F6F4EE; min-height: 100vh; display: flex; flex-wrap: wrap">
+<dc-import name="AdminSidebar" active="packages" hint-size="256px,1000px"></dc-import>
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; color: #4E5548">Website · shown on Services and used in proposals</span>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 44px; line-height: 1.05">Packages &amp; add-ons</h1>
+</div>
+<a href="#" style="text-decoration: none; background: #23271F; color: #F6F4EE; padding: 12px 18px; border-radius: 2px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">Save &amp; publish</a>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
+<sc-for list="{{packages}}" as="p" hint-placeholder-count="3">
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px"><input type="text" value="{{p.name}}" aria-label="Package name" style="border: none; border-bottom: 1px solid #DAD7CC; padding: 4px 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; min-width: 0; flex: 1"><span style="font-size: 12px; color: #56604A; font-weight: 600">{{p.vis}}</span></div>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Who it is for<textarea rows="2" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 10px; font-size: 14px; font-weight: 400; color: #23271F; resize: vertical">{{p.for}}</textarea></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Starting price (₹)<input type="text" value="[from ₹ amount]" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 10px; font-size: 14px; font-weight: 400"></label>
+<label style="display: flex; gap: 8px; font-size: 13px"><input type="checkbox"> Show price on the website</label>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600">Included</span>
+<sc-for list="{{p.inc}}" as="i" hint-placeholder-count="4"><span style="font-size: 14px; border-top: 1px solid #ECEAE2; padding-top: 6px">{{i}}</span></sc-for>
+<a href="#" style="font-size: 13px">+ Add line</a></div>
+</section>
+</sc-for>
+</div>
+
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap"><h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 26px">Calculator rates</h2><a href="Calculator.dc.html" style="font-size: 13px">Open the budget calculator ↗</a></div>
+<span style="font-size: 13px; color: #4E5548">Used by the public budget calculator. Patna is the base; other cities multiply it. Last updated: [date].</span>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px 18px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Catering per plate (₹)<input type="text" value="1,100" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 10px; font-size: 14px; font-weight: 400"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Banquet per function (₹)<input type="text" value="1,50,000" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 10px; font-size: 14px; font-weight: 400"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Premium décor per function (₹)<input type="text" value="4,00,000" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 10px; font-size: 14px; font-weight: 400"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">City multipliers<input type="text" value="Ranchi 0.95 · Delhi 1.6 · India dest. 1.9 · Abroad 2.8" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 10px; font-size: 14px; font-weight: 400"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Range shown<input type="text" value="± 15%" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 10px; font-size: 14px; font-weight: 400"></label>
+</div>
+<a href="#" style="font-size: 13px">Edit all rates (venues, décor levels, photo, entertainment, stay, add-ons) →</a>
+</section>
+
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 8px 22px 16px; overflow-x: auto">
+<table style="width: 100%; min-width: 720px; border-collapse: collapse; font-size: 14px">
+<caption style="text-align: left; padding: 14px 0 8px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px">Add-ons</caption>
+<thead><tr style="text-align: left; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #4E5548"><th style="padding: 10px 8px 10px 0; font-weight: 600">Add-on</th><th style="padding: 10px 8px; font-weight: 600">Status</th><th style="padding: 10px 8px; font-weight: 600">Price hint</th><th style="padding: 10px 8px; font-weight: 600">On website</th><th style="padding: 10px 0 10px 8px; font-weight: 600">WhatsApp message</th></tr></thead>
+<tbody>
+<sc-for list="{{addons}}" as="a" hint-placeholder-count="10">
+<tr style="border-top: 1px solid #ECEAE2"><td style="padding: 11px 8px 11px 0; font-weight: 600">{{a.name}}</td><td style="padding: 11px 8px"><span style="background: {{a.badgeBg}}; border-radius: 2px; padding: 3px 8px; font-size: 12px; font-weight: 600">{{a.status}}</span></td><td style="padding: 11px 8px; color: #4E5548">On request</td><td style="padding: 11px 8px; color: {{a.onColor}}; font-weight: 600">{{a.on}}</td><td style="padding: 11px 0 11px 8px; color: #4E5548; font-size: 13px">{{a.msg}}</td></tr>
+</sc-for>
+</tbody>
+</table>
+<span style="font-size: 12px; color: #4E5548">“Proposed” add-ons stay hidden until the team confirms we can deliver them.</span>
+</section>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1500}}'>
+class Component extends DCLogic {
+renderVals() {
+const live = ['Return gifts'];
+const proposed = ['Trousseau & shagun packing', 'Welcome hampers', 'Live streaming', 'Pandit & rituals', 'Baraat & grand entries', 'Special effects', 'Kids’ zone & elder care', 'Valet & security', 'Same-day highlight film'];
+const row = (name, status) => ({ name, status, badgeBg: status === 'Live' ? '#DDE1D6' : '#F1E7D3', on: status === 'Live' ? 'Shown' : 'Hidden', onColor: status === 'Live' ? '#56604A' : '#4E5548', msg: 'Hi Wedlock, I’d like to know more about ' + name.toLowerCase() + '.' });
+return {
+packages: [
+{ name: 'Full Planning', vis: 'Live', for: 'Couples who want one team to plan and run every function, from first idea to vidaai.', inc: ['Venue search and contracts', 'Design and decor', 'Vendor booking and management', 'Guest hospitality', 'On-day team for every function'] },
+{ name: 'Partial Planning', vis: 'Live', for: 'Families who have booked some vendors and want us to pull it together.', inc: ['Planning from 4 months out', 'Vendor gap-filling', 'Run-of-show', 'On-day team'] },
+{ name: 'Wedding Week', vis: 'Live', for: 'Everything is booked; you want calm hands for the final weeks.', inc: ['Takeover 6 weeks out', 'Vendor confirmations', 'On-day coordination'] }
+],
+addons: [...live.map((n) => row(n, 'Live')), ...proposed.map((n) => row(n, 'Proposed'))]
+};
+}
+}
+</script>
+</body>
+</html>

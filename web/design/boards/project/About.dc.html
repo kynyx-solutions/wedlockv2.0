@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock — About</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;family=Tiro+Devanagari+Hindi&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}a:hover{color:#56604A}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 17px; line-height: 1.6; color: #23271F; background: #F6F4EE">
+<dc-import name="Header" active="about" hint-size="100%,124px"></dc-import>
+
+<!-- HERO -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 56px 32px 64px; display: flex; flex-direction: column; gap: 40px">
+<nav aria-label="Breadcrumb" style="font-size: 14px; color: #4E5548"><a href="Home.dc.html" style="color: #4E5548">Home</a> / About us</nav>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 40px; align-items: end">
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(46px, 6vw, 84px); line-height: 1.02; letter-spacing: -0.025em">Since 2014.<br>650+ celebrations.<br><em>One promise.</em></h1>
+<p style="margin: 0; font-size: 20px; color: #4E5548">We exist so your family can be fully present. We absorb the logistics, the vendors and the weather — and turn each celebration into a splendid memoir.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 16px">
+<img src="/_blob/9c41f59830e2a3b308a03a5645044282" alt="A floral mandap of red gerberas with hanging crystal lights" style="grid-column: span 2; display: block; width: 100%; height: 460px; object-fit: cover; border-radius: 12px">
+<div style="display: grid; grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 16px; min-height: 460px">
+<img src="/_blob/1d88ccad4a1b31d661ccd9197b4f3222" alt="A bride beneath a red canopy hung with golden latkans" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; border-radius: 12px">
+<img src="/_blob/f89d2e44015c11f50397469b072a159e" alt="A black-and-white portrait of a couple under fairy lights" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 40% 25%; border-radius: 12px">
+</div>
+</div>
+</section>
+
+<!-- STORY -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 64px 32px 112px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 64px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<span style="align-self: flex-start; color: #7E6233; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600">Our story</span>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.1">Born in Patna, <em>built on the lineage of Eventoss.</em></h2>
+<p style="margin: 0; color: #4E5548">At Wedlock, we deeply appreciate the importance of this special journey. We began in Patna in 2014, carrying the production craft of Eventoss — the region’s leading marketing and events agency — into weddings. A run of Patna weddings built our name for comfort matched with grandeur.</p>
+<p style="margin: 0; color: #4E5548">Today we are planners, stylists, carpenters, light designers, choreographers, travel agents and — when needed — crisis negotiators, with teams in Patna, Ranchi and New Delhi and a destination desk that has scouted 40+ cities in 14 countries.</p>
+</div>
+<figure style="margin: 0; background: #ECEAE2; border-radius: 12px; padding: 40px; display: flex; flex-direction: column; gap: 24px">
+<img src="/_blob/dd60096192678ede0464f91263ec5385" alt="An outdoor reception stage framed in greenery and white flowers at night" style="display: block; width: 100%; height: 280px; object-fit: cover; border-radius: 10px">
+<blockquote style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; line-height: 1.35; font-style: italic">“We exist so your family can be fully present.”</blockquote>
+<figcaption style="font-size: 15px"><strong style="font-weight: 500">The Wedlock Atelier</strong><br><span style="color: #4E5548">Our promise to every family</span></figcaption>
+</figure>
+</section>
+
+<!-- TIMELINE -->
+<section style="background: #23271F; color: #F6F4EE">
+<div style="max-width: 1280px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 48px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(36px, 4vw, 58px); line-height: 1.08">A decade and more, <em>in brief</em></h2>
+<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px">
+<sc-for list="{{timeline}}" as="item" hint-placeholder-count="5">
+<li style="background: #2E3328; border-radius: 10px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 36px; font-weight: 300">{{item.year}}</span>
+<span style="font-size: 15px; color: #BFC5B6">{{item.text}}</span>
+</li>
+</sc-for>
+</ol>
+</div>
+</section>
+
+<!-- VALUES -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 48px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(36px, 4vw, 58px); line-height: 1.08; text-align: center">What we <em>stand for</em></h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 20px">
+<sc-for list="{{values}}" as="item" hint-placeholder-count="4">
+<article style="background: #ECEAE2; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; font-weight: 300; color: #7E6233; line-height: 1">{{item.n}}</span>
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 26px">{{item.title}}</h3>
+<p style="margin: 0; color: #4E5548; font-size: 16px">{{item.text}}</p>
+</article>
+</sc-for>
+</div>
+</section>
+
+<!-- LEADERSHIP -->
+<section style="background: #DDE1D6">
+<div style="max-width: 1280px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 48px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 32px; align-items: end">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(36px, 4vw, 58px); line-height: 1.08">Leadership</h2>
+<p style="margin: 0; color: #3A4234">A hands-on team of planners, stylists and producers across Patna, Ranchi and New Delhi.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px">
+<sc-for list="{{leaders}}" as="item" hint-placeholder-count="4">
+<article style="background: #F6F4EE; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column">
+<img src="{{item.img}}" alt="Portrait of {{item.name}}" style="display: block; width: 100%; height: 440px; object-fit: cover; object-position: {{item.pos}}">
+<div style="padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px">{{item.name}}</span>
+<span style="font-size: 14px; color: #7E6233; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">{{item.role}}</span>
+<span style="font-size: 14px; color: #4E5548">{{item.note}}</span>
+</div>
+</article>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- OFFICES -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: flex-end">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(36px, 4vw, 58px); line-height: 1.08">Three offices, <em>one team</em></h2>
+<a href="Contact.dc.html" style="text-decoration: none; background: #ECEAE2; padding: 15px 26px; border-radius: 2px; font-weight: 500">Visit a studio →</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 16px">
+<sc-for list="{{offices}}" as="item" hint-placeholder-count="3">
+<div style="background: #ECEAE2; border-radius: 10px; padding: 26px; display: flex; justify-content: space-between; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px">{{item.city}}</span><span style="font-size: 14px; color: #4E5548">{{item.tag}}</span></div>
+<span style="font-size: 14px; color: #4E5548; text-align: right">{{item.address}}</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- LINEAGE -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 112px">
+<div style="background: #ECEAE2; border-radius: 16px; padding: 56px; display: flex; flex-direction: column; gap: 32px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(32px, 3.4vw, 48px)">What the Eventoss lineage gives you</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+<sc-for list="{{lineage}}" as="item" hint-placeholder-count="4">
+<div style="background: #F6F4EE; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; color: #7E6233; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">{{item.k}}</span><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; line-height: 1.25">{{item.v}}</span></div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- CTA SPLIT -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 112px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 20px">
+<a href="Contact.dc.html" style="text-decoration: none; background: #56604A; color: #F6F4EE; border-radius: 12px; padding: 48px; display: flex; flex-direction: column; gap: 12px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 36px; font-weight: 300">Planning a celebration?</span><span style="color: #DCE0D4">Book your first meeting with our wedding consultants — free.</span><span style="font-weight: 500; margin-top: 12px">Get in touch →</span></a>
+<a href="Careers.dc.html" style="text-decoration: none; background: #DDE1D6; border-radius: 12px; padding: 48px; display: flex; flex-direction: column; gap: 12px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 36px; font-weight: 300">Want to plan with us?</span><span style="color: #3A4234">We’re growing our teams in Patna, Ranchi and New Delhi.</span><span style="font-weight: 500; margin-top: 12px">See open roles →</span></a>
+</section>
+
+<dc-import name="WhatsAppButton" message="Hi Wedlock! I was reading about your team and would like to know how you can help plan our wedding." hint-size="0px,0px"></dc-import>
+<dc-import name="Footer" hint-size="100%,640px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6400}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+timeline: [
+{ year: '2014', text: 'Founded in Patna on the lineage of Eventoss, the region’s leading marketing and events agency.' },
+{ year: '2021', text: 'A run of Patna weddings builds our name for comfort matched with grandeur.' },
+{ year: '2023', text: 'Our destination desk forms, taking celebrations beyond Bihar for the first time.' },
+{ year: '2024', text: 'Ten years in — teams active in Patna, Ranchi and New Delhi.' },
+{ year: 'Today', text: '650+ celebrations across 40+ cities and 14 countries.' }
+],
+values: [
+{ n: '01', title: 'Family first, always', text: 'Every plan begins by identifying the elders and their comfort. Indian families are the design brief.' },
+{ n: '02', title: 'Craft over decoration', text: 'Everything is prototyped, material-tested and rehearsed before it reaches your venue.' },
+{ n: '03', title: 'Transparency as policy', text: 'One portal shows every quote and every vendor. No hidden margins.' },
+{ n: '04', title: 'Calm is a deliverable', text: 'Our favourite review is the simplest: “we never worried once.”' }
+],
+leaders: [
+{ name: 'Syed Aabish Hassan', role: 'CEO & Founder', note: 'Founder of Eventoss Entertainment, the agency Wedlock grew out of.', img: '/_blob/71e5a6152f8bbc4fa72dd3ad80990678', pos: '50% 20%' },
+{ name: 'Rahul Ranjan', role: 'Executive Director & Co-founder', note: 'Co-founder of the Eventoss group.', img: '/_blob/dc95ae603825187c58f97a459dbbf4f7', pos: '50% 15%' },
+{ name: 'Aliwaris Khan', role: 'Director — Events & Entertainment', note: 'Heads events and entertainment for the Eventoss group.', img: '/_blob/c7c360b47a3edb22b9d4c7c5b08d719a', pos: '50% 15%' }
+],
+offices: [
+{ city: 'Patna', tag: 'Headquarters', address: '208-A, Kaushalya Estate, Dak Bunglow Road' },
+{ city: 'Ranchi', tag: 'Regional office', address: 'By appointment' },
+{ city: 'New Delhi', tag: 'North region studio', address: 'By appointment' }
+],
+lineage: [
+{ k: 'Heritage', v: 'Eventoss — the region’s leading marketing & events agency' },
+{ k: 'Styling', v: 'An in-house styling studio with fabrication partners' },
+{ k: 'Production', v: 'Light & sound design with broadcast-grade crews' },
+{ k: 'Talent', v: 'Direct relationships with artist agencies & managements' }
+]
+};
+}
+}
+</script>
+</body>
+</html>

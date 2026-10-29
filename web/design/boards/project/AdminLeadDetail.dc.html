@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock admin — Lead: Priya &amp; Rohan</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}
+input,button,select,textarea{font:inherit}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 15px; line-height: 1.5; color: #23271F; background: #F6F4EE; min-height: 100vh; display: flex; flex-wrap: wrap">
+<dc-import name="AdminSidebar" active="leads" hint-size="256px,1000px"></dc-import>
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+
+<a href="AdminLeads.dc.html" style="font-size: 13px; color: #4E5548; text-decoration: none">← All leads</a>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; color: #4E5548">Lead #1042 · received today, 9:40 am via WhatsApp button on /services · sample data</span>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 44px; line-height: 1.05">Priya &amp; Rohan</h1>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<a href="tel:+910000000000" style="text-decoration: none; background: #ECEAE2; padding: 11px 16px; border-radius: 2px; font-size: 13px; font-weight: 600">Call</a>
+<a href="https://wa.me/910000000000?text=Namaste%20Priya%2C%20this%20is%20Rahul%20from%20Wedlock." target="_blank" rel="noopener" style="text-decoration: none; background: #1F7A45; color: #FFFFFF; padding: 11px 16px; border-radius: 2px; font-size: 13px; font-weight: 600">WhatsApp</a>
+<a href="AdminMessages.dc.html" style="text-decoration: none; background: #ECEAE2; padding: 11px 16px; border-radius: 2px; font-size: 13px; font-weight: 600">Email</a>
+<a href="AdminEvents.dc.html" style="text-decoration: none; background: #23271F; color: #F6F4EE; padding: 11px 16px; border-radius: 2px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">Mark won → create event</a>
+</div>
+</div>
+
+<ol aria-label="Stage" style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 4px">
+<sc-for list="{{stages}}" as="s" hint-placeholder-count="6">
+<li style="background: {{s.bg}}; color: {{s.fg}}; padding: 10px 12px; font-size: 13px; font-weight: 600; text-align: center; border-radius: 2px">{{s.name}}</li>
+</sc-for>
+</ol>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 26px">Wedding details</h2>
+<dl style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px 24px">
+<sc-for list="{{details}}" as="d" hint-placeholder-count="9">
+<div><dt style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #4E5548; font-weight: 600">{{d.k}}</dt><dd style="margin: 2px 0 0">{{d.v}}</dd></div>
+</sc-for>
+</dl>
+<div style="display: flex; flex-wrap: wrap; gap: 6px"><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #4E5548; font-weight: 600; margin-right: 6px; align-self: center">Events</span><sc-for list="{{evs}}" as="e" hint-placeholder-count="4"><span style="background: #ECEAE2; border-radius: 2px; padding: 4px 10px; font-size: 13px">{{e}}</span></sc-for></div>
+</section>
+
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 26px">Activity</h2>
+<form style="display: flex; flex-direction: column; gap: 10px; background: #F6F4EE; border-radius: 4px; padding: 14px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center"><label style="font-size: 13px; color: #4E5548; display: flex; gap: 6px; align-items: center">Log<select style="border: 1px solid #DAD7CC; background: #FFFFFF; border-radius: 2px; padding: 7px 10px; font-size: 13px"><option>WhatsApp chat</option><option>Call</option><option>Meeting</option><option>Note</option></select></label></div>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: #4E5548">Summary<textarea rows="3" placeholder="What was discussed? Paste key lines from the WhatsApp chat." style="border: 1px solid #DAD7CC; background: #FFFFFF; border-radius: 2px; padding: 10px; font-size: 14px; color: #23271F; resize: vertical"></textarea></label>
+<button type="submit" style="align-self: flex-start; border: none; background: #23271F; color: #F6F4EE; border-radius: 2px; padding: 10px 16px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; cursor: pointer">Save to timeline</button>
+</form>
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+<sc-for list="{{activity}}" as="a" hint-placeholder-count="4">
+<li style="display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 14px; padding: 12px 0; border-top: 1px solid #ECEAE2"><span style="font-size: 13px; color: #4E5548">{{a.when}}</span><span><strong style="font-weight: 600">{{a.type}}</strong> · {{a.text}}</span></li>
+</sc-for>
+</ol>
+</section>
+</div>
+
+<aside style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 12px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Assigned planner<select style="border: 1px solid #DAD7CC; background: #FFFFFF; border-radius: 2px; padding: 10px; font-size: 14px"><option>Unassigned</option><option>Rahul Ranjan</option><option>Aliwaris Khan</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Next follow-up<input type="datetime-local" value="2026-10-29T17:00" style="border: 1px solid #DAD7CC; background: #FFFFFF; border-radius: 2px; padding: 10px; font-size: 14px"></label>
+<span style="font-size: 12px; color: #4E5548">A reminder is emailed to the planner at this time.</span>
+</section>
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 24px">Proposal</h2>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Package<select style="border: 1px solid #DAD7CC; background: #FFFFFF; border-radius: 2px; padding: 10px; font-size: 14px"><option>Full Planning</option><option>Partial Planning</option><option>Wedding Week</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Add-ons<span style="display: flex; flex-wrap: wrap; gap: 6px; font-weight: 400"><span style="background: #ECEAE2; border-radius: 2px; padding: 4px 10px">Return gifts</span><span style="background: #ECEAE2; border-radius: 2px; padding: 4px 10px">Live streaming</span><span style="background: #ECEAE2; border-radius: 2px; padding: 4px 10px">+ Add</span></span></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Quoted fee (₹)<input type="text" value="[₹ amount]" style="border: 1px solid #DAD7CC; background: #FFFFFF; border-radius: 2px; padding: 10px; font-size: 14px"></label>
+<a href="#" style="text-decoration: none; text-align: center; background: #ECEAE2; padding: 11px; border-radius: 2px; font-size: 13px; font-weight: 600">Generate proposal PDF · phase 2</a>
+</section>
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 24px">Quick message</h2>
+<span style="font-size: 13px; color: #4E5548">Pick a template. Names, dates and links fill in automatically.</span>
+<sc-for list="{{quick}}" as="q" hint-placeholder-count="4">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; border-top: 1px solid #ECEAE2; padding-top: 10px"><span style="font-size: 14px">{{q.name}}</span><span style="display: flex; gap: 6px"><a href="{{q.wa}}" target="_blank" rel="noopener" style="text-decoration: none; background: #1F7A45; color: #FFFFFF; padding: 6px 10px; border-radius: 2px; font-size: 12px; font-weight: 600">WhatsApp</a><a href="AdminMessages.dc.html" style="text-decoration: none; background: #ECEAE2; padding: 6px 10px; border-radius: 2px; font-size: 12px; font-weight: 600">Email</a></span></div>
+</sc-for>
+</section>
+<section style="background: #ECEAE2; border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #4E5548">
+<span><strong style="color: #23271F; font-weight: 600">Consent:</strong> agreed to WhatsApp and phone contact on 29 Oct 2026.</span>
+<a href="#" style="color: #8C3B2E">Delete this person’s data on request</a>
+</section>
+</aside>
+</div>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1400}}'>
+class Component extends DCLogic {
+renderVals() {
+const names = ['New', 'Contacted', 'Meeting', 'Proposal sent', 'Won', 'Lost'];
+const current = 1;
+return {
+stages: names.map((name, i) => ({ name, bg: i < current ? '#56604A' : i === current ? '#23271F' : '#ECEAE2', fg: i <= current ? '#F6F4EE' : '#4E5548' })),
+details: [
+{ k: 'Phone (WhatsApp)', v: '+91 [number]' },
+{ k: 'Email', v: '[email]' },
+{ k: 'Wedding date', v: '14 February 2027' },
+{ k: 'City', v: 'Patna' },
+{ k: 'Guests', v: '300–600' },
+{ k: 'Budget band', v: '[₹ band]' },
+{ k: 'Service', v: 'Full Planning' },
+{ k: 'Source', v: 'WhatsApp button · /services' },
+{ k: 'Campaign', v: 'utm_source=instagram' }
+],
+quick: [
+['Thank you for enquiring', 'Namaste Priya, thank you for reaching out to Wedlock. Rahul here, your planner. When is a good time to call?'],
+['Book a studio visit', 'Namaste Priya, would you like to visit our Patna studio this week? We can walk you through venues and past weddings.'],
+['Proposal is ready', 'Namaste Priya, your Wedlock proposal is ready. Sharing the link here: [link]'],
+['Gentle follow-up', 'Namaste Priya, just checking in on the proposal. Happy to answer any questions.']
+].map(([name, text]) => ({ name, wa: 'https://wa.me/910000000000?text=' + encodeURIComponent(text) })),
+evs: ['Mehendi', 'Haldi', 'Sangeet', 'Wedding', 'Reception'],
+activity: [
+{ when: 'Today 10:05', type: 'WhatsApp chat', text: 'Asked about Full Planning for 5 events; parents want a Patna venue for 400.' },
+{ when: 'Today 9:40', type: 'Lead created', text: 'WhatsApp button on the Services page.' },
+{ when: 'Today 9:41', type: 'Auto-email', text: 'Team notified at info@wedlock.co.in.' }
+]
+};
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock admin — Leads</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}
+input,button,select{font:inherit}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 15px; line-height: 1.5; color: #23271F; background: #F6F4EE; min-height: 100vh; display: flex; flex-wrap: wrap">
+<dc-import name="AdminSidebar" active="leads" hint-size="256px,1000px"></dc-import>
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; color: #4E5548">Business · 38 open leads · sample data</span>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 44px; line-height: 1.05">Leads</h1>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="#" style="text-decoration: none; background: #ECEAE2; padding: 12px 16px; border-radius: 2px; font-size: 13px; font-weight: 600">Export CSV</a>
+<a href="AdminLeadDetail.dc.html" style="text-decoration: none; background: #23271F; color: #F6F4EE; padding: 12px 18px; border-radius: 2px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">+ New lead</a>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center">
+<div role="group" aria-label="View" style="display: flex; border: 1px solid #23271F; border-radius: 2px; overflow: hidden"><button type="button" aria-pressed="true" style="border: none; background: #23271F; color: #F6F4EE; padding: 9px 14px; font-size: 13px; cursor: pointer">Board</button><button type="button" aria-pressed="false" style="border: none; background: transparent; color: #23271F; padding: 9px 14px; font-size: 13px; cursor: pointer">List</button></div>
+<label style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #4E5548">Owner<select style="border: 1px solid #DAD7CC; background: #FFFFFF; border-radius: 2px; padding: 8px 10px; font-size: 13px"><option>Everyone</option><option>Unassigned</option><option>Rahul Ranjan</option><option>Aliwaris Khan</option></select></label>
+<label style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #4E5548">City<select style="border: 1px solid #DAD7CC; background: #FFFFFF; border-radius: 2px; padding: 8px 10px; font-size: 13px"><option>All cities</option><option>Patna</option><option>Ranchi</option><option>New Delhi</option><option>Destination</option></select></label>
+<label style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #4E5548">Source<select style="border: 1px solid #DAD7CC; background: #FFFFFF; border-radius: 2px; padding: 8px 10px; font-size: 13px"><option>All sources</option><option>WhatsApp</option><option>Website form</option><option>Instagram</option><option>Referral</option></select></label>
+<label style="display: flex; align-items: center; gap: 8px; background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 2px; padding: 0 10px; margin-left: auto; min-width: 220px"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Search leads</span><input type="search" placeholder="Search name or phone" style="flex: 1; border: none; background: transparent; padding: 9px 0; font-size: 13px"></label>
+</div>
+
+<div style="overflow-x: auto; padding-bottom: 8px">
+<div style="display: grid; grid-template-columns: repeat(6, 260px); gap: 14px; align-items: start">
+<sc-for list="{{cols}}" as="c" hint-placeholder-count="6">
+<section style="background: #ECEAE2; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; gap: 10px; border-top: 3px solid {{c.color}}">
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding: 2px 4px"><h2 style="margin: 0; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600">{{c.name}}</h2><span style="font-size: 13px; color: #4E5548">{{c.count}}</span></div>
+<sc-for list="{{c.cards}}" as="k" hint-placeholder-count="3">
+<a href="AdminLeadDetail.dc.html" style="text-decoration: none; background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-weight: 600">{{k.name}}</span>
+<span style="font-size: 13px; color: #4E5548">{{k.date}} · {{k.city}} · {{k.guests}} guests</span>
+<div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px"><span style="background: #F6F4EE; border-radius: 2px; padding: 3px 8px">{{k.source}}</span><span style="color: #4E5548">{{k.owner}}</span></div>
+<span style="font-size: 12px; color: {{k.dueColor}}; font-weight: 600">{{k.due}}</span>
+</a>
+</sc-for>
+</section>
+</sc-for>
+</div>
+</div>
+<span style="font-size: 12px; color: #4E5548">Drag a card to change its stage. Moving a card to Won offers to create an event.</span>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1300}}'>
+class Component extends DCLogic {
+renderVals() {
+const card = (name, date, city, guests, source, owner, due, late) => ({ name, date, city, guests, source, owner, due, dueColor: late ? '#8C3B2E' : '#56604A' });
+const cols = [
+{ name: 'New', color: '#56604A', cards: [card('Priya & Rohan', '14 Feb 2027', 'Patna', '300', 'WhatsApp', 'Unassigned', 'Call today', false), card('Neha Sinha', 'Dec 2027', 'Jaipur', '200', 'Website', 'Unassigned', 'Call today', false), card('Vikram & Ishaan’s parents', 'Apr 2027', 'Patna', '600', 'Referral', 'Unassigned', 'Call today', false)] },
+{ name: 'Contacted', color: '#7E6233', cards: [card('Aditya & family', '22 Nov 2027', 'Ranchi', '400', 'Instagram', 'Rahul R.', 'Send shortlist · today', false), card('Meera Jha', 'Feb 2027', 'Patna', '250', 'Website', 'Rahul R.', 'Overdue 2 days', true)] },
+{ name: 'Meeting', color: '#B8975F', cards: [card('Sana & Imran', '5 Mar 2027', 'New Delhi', '350', 'Referral', 'Aliwaris K.', 'Studio, Sat 11 am', false), card('The Gupta family', 'Nov 2027', 'Goa', '150', 'WhatsApp', 'Rahul R.', 'Video call, Mon', false)] },
+{ name: 'Proposal sent', color: '#4E5548', cards: [card('Kavya Mehra', 'Jan 2028', 'Udaipur', '320', 'Website', 'Rahul R.', 'Follow up · Fri', false), card('Ritika & Arnav', 'Dec 2027', 'Patna', '500', 'Instagram', 'Aliwaris K.', 'Follow up · today', false)] },
+{ name: 'Won', color: '#23271F', cards: [card('Pooja & Karan', '9 Feb 2027', 'Patna', '450', 'Referral', 'Rahul R.', 'Event created ✓', false)] },
+{ name: 'Lost', color: '#BFC5B6', cards: [card('Ankit Verma', 'Jan 2027', 'Ranchi', '200', 'Website', 'Rahul R.', 'Reason: budget', false)] }
+];
+return { cols: cols.map((c) => ({ ...c, count: c.cards.length })) };
+}
+}
+</script>
+</body>
+</html>

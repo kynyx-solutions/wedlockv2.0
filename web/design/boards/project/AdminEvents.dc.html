@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock admin — Events</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}
+input,button,select{font:inherit}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 15px; line-height: 1.5; color: #23271F; background: #F6F4EE; min-height: 100vh; display: flex; flex-wrap: wrap">
+<dc-import name="AdminSidebar" active="events" hint-size="256px,1000px"></dc-import>
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; color: #4E5548">Business · 14 booked weddings · sample data</span>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 44px; line-height: 1.05">Events</h1>
+</div>
+<a href="#" style="text-decoration: none; background: #23271F; color: #F6F4EE; padding: 12px 18px; border-radius: 2px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">+ New event</a>
+</div>
+
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 8px 22px; overflow-x: auto">
+<table style="width: 100%; min-width: 760px; border-collapse: collapse; font-size: 14px">
+<thead><tr style="text-align: left; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #4E5548"><th style="padding: 12px 8px 10px 0; font-weight: 600">Couple</th><th style="padding: 12px 8px 10px; font-weight: 600">Dates</th><th style="padding: 12px 8px 10px; font-weight: 600">City · venue</th><th style="padding: 12px 8px 10px; font-weight: 600">Planner</th><th style="padding: 12px 8px 10px; font-weight: 600">Vendors</th><th style="padding: 12px 8px 10px; font-weight: 600">Payment</th></tr></thead>
+<tbody>
+<sc-for list="{{events}}" as="e" hint-placeholder-count="5">
+<tr style="border-top: 1px solid #ECEAE2; background: {{e.bg}}"><td style="padding: 12px 8px 12px 0; font-weight: 600">{{e.name}}</td><td style="padding: 12px 8px">{{e.dates}}</td><td style="padding: 12px 8px">{{e.place}}</td><td style="padding: 12px 8px">{{e.owner}}</td><td style="padding: 12px 8px">{{e.vendors}}</td><td style="padding: 12px 8px; color: {{e.payColor}}; font-weight: 600">{{e.pay}}</td></tr>
+</sc-for>
+</tbody>
+</table>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end; border-top: 1px solid #DAD7CC; padding-top: 24px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; color: #4E5548">Selected · from lead #0987 · Patna · 450 guests</span>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 36px; line-height: 1.1">Pooja &amp; Karan · 7–9 February 2027</h2>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<a href="https://wa.me/910000000000?text=Namaste%20Pooja%2C%20sharing%20this%20week%27s%20update%20from%20Wedlock." target="_blank" rel="noopener" style="text-decoration: none; background: #1F7A45; color: #FFFFFF; padding: 11px 16px; border-radius: 2px; font-size: 13px; font-weight: 600">WhatsApp couple</a>
+<a href="AdminMessages.dc.html" style="text-decoration: none; background: #ECEAE2; padding: 11px 16px; border-radius: 2px; font-size: 13px; font-weight: 600">Email all vendors</a>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+<section style="flex: 999 1 480px; min-width: 0; background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 26px">Functions</h3>
+<ol style="list-style: none; margin: 0; padding: 0">
+<sc-for list="{{functions}}" as="f" hint-placeholder-count="4">
+<li style="display: grid; grid-template-columns: 130px minmax(0, 1fr) auto; gap: 14px; padding: 12px 0; border-top: 1px solid #ECEAE2; align-items: baseline"><span style="font-size: 13px; color: #4E5548">{{f.when}}</span><span><strong style="font-weight: 600">{{f.name}}</strong> · {{f.venue}}</span><span style="font-size: 13px; color: #4E5548">{{f.guests}}</span></li>
+</sc-for>
+</ol>
+<h3 style="margin: 8px 0 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 26px">Checklist</h3>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{tasks}}" as="t" hint-placeholder-count="5">
+<li style="display: flex; gap: 10px; align-items: baseline"><span aria-hidden="true" style="width: 14px; height: 14px; flex: 0 0 auto; border: 1px solid #56604A; border-radius: 2px; background: {{t.box}}"></span><span style="color: {{t.fg}}">{{t.text}}</span><span style="margin-left: auto; font-size: 13px; color: #4E5548">{{t.due}}</span></li>
+</sc-for>
+</ul>
+</section>
+
+<section style="flex: 1 1 360px; background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0 0 8px; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 26px">Vendors on this wedding</h3>
+<sc-for list="{{vendors}}" as="v" hint-placeholder-count="6">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 0; border-top: 1px solid #ECEAE2">
+<span style="display: flex; flex-direction: column"><strong style="font-weight: 600; font-size: 14px">{{v.name}}</strong><span style="font-size: 12px; color: {{v.color}}">{{v.role}} · {{v.status}}</span></span>
+<span style="display: flex; gap: 6px"><a href="{{v.wa}}" target="_blank" rel="noopener" style="text-decoration: none; background: #1F7A45; color: #FFFFFF; padding: 6px 10px; border-radius: 2px; font-size: 12px; font-weight: 600">WhatsApp</a><a href="AdminMessages.dc.html" style="text-decoration: none; background: #ECEAE2; padding: 6px 10px; border-radius: 2px; font-size: 12px; font-weight: 600">Email</a></span>
+</div>
+</sc-for>
+<a href="AdminVendors.dc.html" style="margin-top: 8px; font-size: 13px">+ Assign a vendor</a>
+</section>
+</div>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1400}}'>
+class Component extends DCLogic {
+renderVals() {
+const pay = { paid: ['Paid in full', '#56604A'], part: ['2 of 3 received', '#7E6233'], due: ['Instalment due', '#8C3B2E'] };
+const ev = (name, dates, place, owner, vendors, p, sel) => ({ name, dates, place, owner, vendors, pay: pay[p][0], payColor: pay[p][1], bg: sel ? '#F6F4EE' : 'transparent' });
+const wa = (text) => 'https://wa.me/910000000000?text=' + encodeURIComponent(text);
+const vendor = (name, role, ok) => ({ name, role, status: ok ? 'confirmed' : 'awaiting reply', color: ok ? '#56604A' : '#8C3B2E', wa: wa('Namaste, Wedlock here about Pooja & Karan, 7–9 Feb 2027, Patna. ') });
+return {
+events: [
+ev('Pooja & Karan', '7–9 Feb 2027', 'Patna · [venue]', 'Rahul R.', '9 of 11 confirmed', 'part', true),
+ev('Sana & Imran', '3–5 Mar 2027', 'New Delhi · [venue]', 'Aliwaris K.', '6 of 10 confirmed', 'part', false),
+ev('Aditya & Shreya', '20–22 Nov 2027', 'Ranchi · [venue]', 'Rahul R.', '2 of 9 confirmed', 'due', false),
+ev('Ritika & Arnav', '11–12 Dec 2027', 'Udaipur · [venue]', 'Aliwaris K.', '4 of 12 confirmed', 'part', false),
+ev('The Gupta family', '18 Nov 2027', 'Goa · [venue]', 'Rahul R.', '1 of 7 confirmed', 'paid', false)
+],
+functions: [
+{ when: 'Sun 7 Feb · 4 pm', name: 'Haldi', venue: 'Family home', guests: '120' },
+{ when: 'Sun 7 Feb · 8 pm', name: 'Mehendi & sangeet', venue: '[venue] lawns', guests: '300' },
+{ when: 'Mon 8 Feb · 9 pm', name: 'Wedding', venue: '[venue] banquet', guests: '450' },
+{ when: 'Tue 9 Feb · 8 pm', name: 'Reception', venue: '[venue] banquet', guests: '600' }
+],
+tasks: [
+['Venue contract signed', 'done', true], ['Decor moodboard approved by couple', 'done', true], ['Return gifts: 450 boxes ordered', 'done', true],
+['Guest hotel blocks confirmed', 'Fri 18 Dec', false], ['Final run-of-show sent to all vendors', '1 Feb', false], ['Second instalment', '15 Jan', false]
+].map(([text, due, done]) => ({ text, due, box: done ? '#56604A' : 'transparent', fg: done ? '#4E5548' : '#23271F' })),
+vendors: [vendor('Phoolwari Decor', 'Decor', true), vendor('Raag Sound & Light', 'Sound & light', true), vendor('Bihar Caterers', 'Catering', true), vendor('Lens & Light Studio', 'Photo & film', true), vendor('Mehendi by Nazia', 'Mehendi', false), vendor('Shagun Gifts', 'Return gifts', false)]
+};
+}
+}
+</script>
+</body>
+</html>

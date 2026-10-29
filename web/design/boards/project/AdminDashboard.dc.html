@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock admin — Dashboard</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}
+input,button,select{font:inherit}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 15px; line-height: 1.5; color: #23271F; background: #F6F4EE; min-height: 100vh; display: flex; flex-wrap: wrap">
+<dc-import name="AdminSidebar" active="dashboard" hint-size="256px,1000px"></dc-import>
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 28px">
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; color: #4E5548">Thursday, 29 October 2026 · sample data</span>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 44px; line-height: 1.05">Good morning, Aabish</h1>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<label style="display: flex; align-items: center; gap: 8px; background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 2px; padding: 0 12px; min-width: 260px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Search</span><input type="search" placeholder="Search leads, events, vendors" style="flex: 1; border: none; background: transparent; padding: 11px 0; font-size: 14px"></label>
+<a href="AdminLeadDetail.dc.html" style="text-decoration: none; background: #23271F; color: #F6F4EE; padding: 12px 18px; border-radius: 2px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">+ New lead</a>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
+<sc-for list="{{kpis}}" as="k" hint-placeholder-count="4">
+<a href="{{k.href}}" style="text-decoration: none; background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #4E5548; font-weight: 600">{{k.label}}</span>
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; font-weight: 400; line-height: 1">{{k.value}}</span>
+<span style="font-size: 13px; color: #56604A">{{k.note}}</span>
+</a>
+</sc-for>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 20px; align-items: start">
+<section style="grid-column: span 2; background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 4px; display: flex; flex-direction: column; min-width: 0">
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; border-bottom: 1px solid #ECEAE2"><h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 26px">New leads</h2><a href="AdminLeads.dc.html" style="font-size: 13px; font-weight: 600">Open pipeline →</a></div>
+<div style="overflow-x: auto">
+<table style="width: 100%; min-width: 640px; border-collapse: collapse; font-size: 14px">
+<thead><tr style="text-align: left; color: #4E5548; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase"><th style="padding: 12px 20px; font-weight: 600">Name</th><th style="padding: 12px 8px; font-weight: 600">Wedding</th><th style="padding: 12px 8px; font-weight: 600">City</th><th style="padding: 12px 8px; font-weight: 600">Source</th><th style="padding: 12px 8px; font-weight: 600">Stage</th><th style="padding: 12px 20px 12px 8px; font-weight: 600">Owner</th></tr></thead>
+<tbody>
+<sc-for list="{{leads}}" as="l" hint-placeholder-count="5">
+<tr style="border-top: 1px solid #ECEAE2"><td style="padding: 14px 20px"><a href="AdminLeadDetail.dc.html" style="font-weight: 600; text-decoration: none">{{l.name}}</a><div style="font-size: 12px; color: #4E5548">{{l.received}}</div></td><td style="padding: 14px 8px">{{l.date}}</td><td style="padding: 14px 8px">{{l.city}}</td><td style="padding: 14px 8px">{{l.source}}</td><td style="padding: 14px 8px"><span style="background: {{l.stageBg}}; color: #23271F; border-radius: 2px; padding: 4px 10px; font-size: 12px; font-weight: 600">{{l.stage}}</span></td><td style="padding: 14px 20px 14px 8px; color: #4E5548">{{l.owner}}</td></tr>
+</sc-for>
+</tbody>
+</table>
+</div>
+</section>
+
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 4px; display: flex; flex-direction: column">
+<div style="padding: 18px 20px; border-bottom: 1px solid #ECEAE2"><h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 26px">Follow-ups due today</h2></div>
+<sc-for list="{{followups}}" as="f" hint-placeholder-count="4">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 20px; border-bottom: 1px solid #ECEAE2">
+<div style="display: flex; flex-direction: column"><span style="font-weight: 600">{{f.name}}</span><span style="font-size: 13px; color: #4E5548">{{f.task}}</span></div>
+<div style="display: flex; gap: 6px"><a href="tel:+910000000000" aria-label="Call" style="text-decoration: none; background: #ECEAE2; border-radius: 2px; padding: 8px 10px; font-size: 12px; font-weight: 600">Call</a><a href="https://wa.me/910000000000" aria-label="WhatsApp" style="text-decoration: none; background: #23271F; color: #F6F4EE; border-radius: 2px; padding: 8px 10px; font-size: 12px; font-weight: 600">WhatsApp</a></div>
+</div>
+</sc-for>
+</section>
+
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 4px; display: flex; flex-direction: column">
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; border-bottom: 1px solid #ECEAE2"><h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 26px">This week’s events</h2><a href="AdminEvents.dc.html" style="font-size: 13px; font-weight: 600">Calendar →</a></div>
+<sc-for list="{{events}}" as="e" hint-placeholder-count="3">
+<div style="display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 14px; padding: 14px 20px; border-bottom: 1px solid #ECEAE2">
+<div style="background: #23271F; color: #F6F4EE; border-radius: 4px; text-align: center; padding: 8px 0; display: flex; flex-direction: column"><span style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #C9AE7E">{{e.dow}}</span><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; line-height: 1">{{e.day}}</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600">{{e.title}}</span><span style="font-size: 13px; color: #4E5548">{{e.meta}}</span></div>
+</div>
+</sc-for>
+</section>
+
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 4px; display: flex; flex-direction: column; gap: 14px; padding: 18px 20px 22px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 26px">Enquiries by source · October</h2>
+<sc-for list="{{sources}}" as="s" hint-placeholder-count="4">
+<div style="display: grid; grid-template-columns: 120px minmax(0, 1fr) 36px; gap: 12px; align-items: center; font-size: 14px"><span>{{s.name}}</span><span style="display: block; height: 10px; border-radius: 2px; background: #56604A; width: {{s.w}}"></span><span style="text-align: right; font-weight: 600">{{s.n}}</span></div>
+</sc-for>
+<span style="font-size: 12px; color: #4E5548">WhatsApp counts clicks on the website’s WhatsApp buttons.</span>
+</section>
+
+<section style="background: #DDE1D6; border-radius: 4px; display: flex; flex-direction: column; gap: 10px; padding: 18px 20px 22px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 26px">Website to-do</h2>
+<a href="AdminStoryEditor.dc.html" style="text-decoration: none; display: flex; justify-content: space-between; background: #F6F4EE; border-radius: 2px; padding: 12px 14px"><span>2 couple stories waiting for consent</span><span>→</span></a>
+<a href="AdminJournalEditor.dc.html" style="text-decoration: none; display: flex; justify-content: space-between; background: #F6F4EE; border-radius: 2px; padding: 12px 14px"><span>1 journal draft scheduled for Monday</span><span>→</span></a>
+<a href="AdminMedia.dc.html" style="text-decoration: none; display: flex; justify-content: space-between; background: #F6F4EE; border-radius: 2px; padding: 12px 14px"><span>8 photos missing alt text</span><span>→</span></a>
+</section>
+</div>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1300}}'>
+class Component extends DCLogic {
+renderVals() {
+const stageBg = { New: '#DDE1D6', Contacted: '#ECEAE2', Meeting: '#E9DFC8', Proposal: '#F1E3C7' };
+const leads = [
+{ name: 'Priya & Rohan', received: '2 hours ago', date: '14 Feb 2027', city: 'Patna', source: 'WhatsApp', stage: 'New', owner: 'Unassigned' },
+{ name: 'Neha Sinha', received: 'Today, 9:12', date: 'Dec 2027', city: 'Jaipur', source: 'Website form', stage: 'New', owner: 'Unassigned' },
+{ name: 'Aditya & family', received: 'Yesterday', date: '22 Nov 2027', city: 'Ranchi', source: 'Instagram', stage: 'Contacted', owner: 'Rahul R.' },
+{ name: 'Sana & Imran', received: '26 Oct', date: '5 Mar 2027', city: 'New Delhi', source: 'Referral', stage: 'Meeting', owner: 'Aliwaris K.' },
+{ name: 'Kavya Mehra', received: '25 Oct', date: 'Jan 2028', city: 'Udaipur', source: 'Website form', stage: 'Proposal', owner: 'Rahul R.' }
+].map((l) => ({ ...l, stageBg: stageBg[l.stage] }));
+const sources = [{ name: 'WhatsApp', n: 21 }, { name: 'Website form', n: 12 }, { name: 'Instagram', n: 9 }, { name: 'Referral', n: 6 }];
+const max = Math.max(...sources.map((s) => s.n));
+return {
+kpis: [
+{ label: 'New leads this week', value: '6', note: '2 still unassigned', href: 'AdminLeads.dc.html' },
+{ label: 'Follow-ups due today', value: '4', note: 'Oldest: 2 days overdue', href: 'AdminLeads.dc.html' },
+{ label: 'Events this week', value: '3', note: 'Across 2 weddings', href: 'AdminEvents.dc.html' },
+{ label: 'Won this month', value: '2', note: 'Out of 11 proposals', href: 'AdminLeads.dc.html' }
+],
+leads,
+followups: [
+{ name: 'Aditya & family', task: 'Send venue shortlist for Ranchi' },
+{ name: 'Sana & Imran', task: 'Confirm studio meeting, Sat 11 am' },
+{ name: 'Kavya Mehra', task: 'Follow up on Udaipur proposal' },
+{ name: 'Neha Sinha', task: 'First call — new enquiry' }
+],
+events: [
+{ dow: 'Fri', day: '30', title: 'Mehendi · [Couple] & [Couple]', meta: '[Venue], Patna · 4 pm · 180 guests · Team: Rahul R. + 6' },
+{ dow: 'Sat', day: '31', title: 'Sangeet · [Couple] & [Couple]', meta: '[Venue], Patna · 7 pm · 320 guests · Team: Aliwaris K. + 9' },
+{ dow: 'Sun', day: '1', title: 'Wedding & reception · [Couple] & [Couple]', meta: '[Venue], Patna · 6 pm · 450 guests · Team: full crew' }
+],
+sources: sources.map((s) => ({ ...s, w: Math.round((s.n / max) * 100) + '%' }))
+};
+}
+}
+</script>
+</body>
+</html>

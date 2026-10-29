@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock admin — Journal editor</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}
+input,button,select,textarea{font:inherit}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 15px; line-height: 1.5; color: #23271F; background: #F6F4EE; min-height: 100vh; display: flex; flex-wrap: wrap">
+<dc-import name="AdminSidebar" active="journal" hint-size="256px,1000px"></dc-import>
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<a href="#" style="font-size: 13px; color: #4E5548; text-decoration: none">← All posts (23)</a>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 44px; line-height: 1.05">Edit post</h1>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<span style="font-size: 13px; color: #4E5548">Draft · saved 2 min ago</span>
+<a href="Article.dc.html" style="text-decoration: none; background: #ECEAE2; padding: 11px 16px; border-radius: 2px; font-size: 13px; font-weight: 600">Preview</a>
+<a href="#" style="text-decoration: none; background: #23271F; color: #F6F4EE; padding: 11px 18px; border-radius: 2px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">Publish</a>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+<section style="flex: 999 1 560px; min-width: 0; background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Title<input type="text" value="A destination wedding in Jaipur: the 12-month timeline" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 12px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; color: #23271F"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Short summary (shown on cards and Google)<textarea rows="2" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 10px; font-size: 14px; color: #23271F; resize: vertical">What to book, and when, for a three-day Jaipur wedding with 250 guests.</textarea></label>
+<div style="display: flex; flex-direction: column; gap: 0">
+<span style="font-size: 13px; font-weight: 600; margin-bottom: 6px">Body</span>
+<div role="toolbar" aria-label="Formatting" style="display: flex; flex-wrap: wrap; gap: 2px; border: 1px solid #DAD7CC; border-bottom: none; border-radius: 2px 2px 0 0; background: #F6F4EE; padding: 6px">
+<sc-for list="{{tools}}" as="t" hint-placeholder-count="10">
+<button type="button" title="{{t.title}}" style="border: none; background: transparent; border-radius: 2px; padding: 6px 10px; font-size: 13px; font-weight: 600; cursor: pointer; color: #23271F">{{t.label}}</button>
+</sc-for>
+</div>
+<textarea rows="16" aria-label="Body (Markdown)" style="border: 1px solid #DAD7CC; border-radius: 0 0 2px 2px; padding: 14px; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; line-height: 1.7; color: #23271F; resize: vertical">Most couples start planning a Jaipur wedding 12 months out. Here is what we book, and in what order.
+
+## 12 months before
+- Fix the dates and the guest count band
+- Shortlist **three palaces**, visit two
+
+## 9 months before
+Block hotel rooms for out-of-town guests. In wedding season, Jaipur rooms go fast.
+
+![The palace courtyard at dusk](media:jaipur-courtyard)
+
+&gt; "Book the venue first. Everything else follows from it." — Rahul Ranjan
+
+## 6 months before
+...</textarea>
+<span style="font-size: 12px; color: #4E5548; margin-top: 6px">Written in Markdown, like WhatsApp formatting. Photos are picked from the Media library, so they arrive already compressed.</span>
+</div>
+</section>
+
+<aside style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 12px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Cover photo<img src="/_blob/6ca31c696a0c519f12e27d0f02982433" alt="Pink sandstone palace architecture in Jaipur" style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px"><a href="AdminMedia.dc.html" style="font-weight: 400">Change from Media library</a></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Type<select style="border: 1px solid #DAD7CC; background: #FFFFFF; border-radius: 2px; padding: 10px; font-size: 14px"><option>Guide</option><option>Article</option><option>Real wedding</option><option>News</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Tags<input type="text" value="Jaipur, destination, timeline" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 10px; font-size: 14px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Author<select style="border: 1px solid #DAD7CC; background: #FFFFFF; border-radius: 2px; padding: 10px; font-size: 14px"><option>Rahul Ranjan</option><option>Syed Aabish Hassan</option><option>Aliwaris Khan</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Publish on<input type="datetime-local" value="2026-11-03T09:00" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 10px; font-size: 14px"></label>
+</section>
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 24px">Google preview</h2>
+<div style="display: flex; flex-direction: column; gap: 2px; font-size: 13px"><span style="color: #4E5548">wedlock.co.in › journal › jaipur-wedding-timeline</span><span style="color: #1A4D8F; font-size: 17px">A destination wedding in Jaipur: the 12-month timeline</span><span style="color: #4E5548">What to book, and when, for a three-day Jaipur wedding with 250 guests.</span></div>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Web address<input type="text" value="jaipur-wedding-timeline" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 10px; font-size: 14px"></label>
+</section>
+</aside>
+</div>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1500}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+tools: [['B', 'Bold'], ['I', 'Italic'], ['H2', 'Heading'], ['H3', 'Sub-heading'], ['“ ”', 'Quote'], ['• List', 'Bullet list'], ['1. List', 'Numbered list'], ['Link', 'Link'], ['Photo', 'Insert photo from Media library'], ['Video', 'Embed a YouTube film']].map(([label, title]) => ({ label, title }))
+};
+}
+}
+</script>
+</body>
+</html>

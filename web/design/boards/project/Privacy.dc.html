@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock — Privacy Policy</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;family=Tiro+Devanagari+Hindi&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}a:hover{color:#56604A}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 17px; line-height: 1.7; color: #23271F; background: #F6F4EE">
+<dc-import name="Header" active="none" hint-size="100%,124px"></dc-import>
+
+<section style="max-width: 1280px; margin: 0 auto; padding: 48px 32px 40px; display: flex; flex-direction: column; gap: 18px; border-bottom: 1px solid #DAD7CC">
+<nav aria-label="Breadcrumb" style="font-size: 14px; color: #4E5548"><a href="Home.dc.html" style="color: #4E5548">Home</a> / Privacy Policy</nav>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(46px, 5.6vw, 76px); line-height: 1.02">Privacy Policy</h1>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; color: #4E5548"><span>Last updated: [date]</span><span>Also see: <a href="Privacy.dc.html">Terms &amp; Conditions</a></span></div>
+<div style="align-self: flex-start; background: #DDE1D6; border-radius: 4px; padding: 10px 14px; font-size: 14px; color: #3A4234">Template layout — final text to be written or reviewed by Wedlock’s lawyer.</div>
+</section>
+
+<section style="max-width: 1280px; margin: 0 auto; padding: 56px 32px 112px; display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start">
+<nav aria-label="On this page" style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 4px; font-size: 15px; border-left: 1px solid #DAD7CC; padding-left: 16px">
+<span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #7E6233; font-weight: 600; margin-bottom: 6px">On this page</span>
+<sc-for list="{{sections}}" as="s" hint-placeholder-count="7"><a href="#{{s.id}}" style="text-decoration: none; padding: 6px 0; color: #4E5548">{{s.title}}</a></sc-for>
+</nav>
+<article style="flex: 999 1 560px; min-width: 0; max-width: 760px; display: flex; flex-direction: column; gap: 40px">
+<sc-for list="{{sections}}" as="s" hint-placeholder-count="7">
+<div id="{{s.id}}" style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 1.2">{{s.title}}</h2>
+<p style="margin: 0; color: #4E5548">{{s.body}}</p>
+</div>
+</sc-for>
+<div style="border-top: 1px solid #DAD7CC; padding-top: 24px; font-size: 15px; color: #4E5548">Questions about your data? Write to <a href="mailto:info@wedlock.co.in">info@wedlock.co.in</a> or visit us at 208-A, Kaushalya Estate, Dak Bunglow Road, Patna.</div>
+</article>
+</section>
+
+<dc-import name="WhatsAppButton" message="Hi Wedlock! I have a question about planning my wedding." hint-size="0px,0px"></dc-import>
+<dc-import name="Footer" hint-size="100%,640px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3600}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+sections: [
+{ id: 'collect', title: 'What we collect', body: 'Details you share in our forms — names, phone, email, wedding date, city, guest count and your message — and basic usage data from your visit. [Lawyer to confirm.]' },
+{ id: 'use', title: 'How we use it', body: 'To reply to your enquiry, plan your celebration, send planning notes you asked for, and improve our website. [Lawyer to confirm.]' },
+{ id: 'cookies', title: 'Cookies and analytics', body: 'We use Google Analytics and, with your consent, the Meta Pixel to understand visits and measure our ads. You can change your choice at any time. [Lawyer to confirm.]' },
+{ id: 'share', title: 'Who we share it with', body: 'Only the vendors working on your celebration and the service providers that run our website and email. We never sell your data. [Lawyer to confirm.]' },
+{ id: 'keep', title: 'How long we keep it', body: '[Retention period for enquiries and client records — to be set by Wedlock.]' },
+{ id: 'rights', title: 'Your rights', body: 'Under the Digital Personal Data Protection Act, 2023, you can ask to see, correct or delete your data, and withdraw consent. [Lawyer to confirm.]' },
+{ id: 'contact', title: 'Contact', body: 'Write to info@wedlock.co.in with “Privacy” in the subject and we will reply within [number] working days.' }
+]
+};
+}
+}
+</script>
+</body>
+</html>

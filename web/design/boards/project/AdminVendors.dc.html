@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock admin — Vendors</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}
+input,button,select{font:inherit}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 15px; line-height: 1.5; color: #23271F; background: #F6F4EE; min-height: 100vh; display: flex; flex-wrap: wrap">
+<dc-import name="AdminSidebar" active="vendors" hint-size="256px,1000px"></dc-import>
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; color: #4E5548">Business · sample data</span>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 44px; line-height: 1.05">Vendors</h1>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="AdminMessages.dc.html" style="text-decoration: none; background: #ECEAE2; padding: 12px 16px; border-radius: 2px; font-size: 13px; font-weight: 600">Message selected</a>
+<a href="#" style="text-decoration: none; background: #23271F; color: #F6F4EE; padding: 12px 18px; border-radius: 2px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">+ Add vendor</a>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px">
+<sc-for list="{{kpis}}" as="k" hint-placeholder-count="4">
+<div style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #4E5548; font-weight: 600">{{k.label}}</span><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 36px; line-height: 1.1">{{k.value}}</span></div>
+</sc-for>
+</div>
+
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 18px 22px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap"><h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 26px">New partner applications</h2><span style="font-size: 13px; color: #4E5548">From the Partner with us page</span></div>
+<sc-for list="{{apps}}" as="a" hint-placeholder-count="2">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; border-top: 1px solid #ECEAE2; padding-top: 12px">
+<span style="display: flex; flex-direction: column"><strong style="font-weight: 600">{{a.name}}</strong><span style="font-size: 13px; color: #4E5548">{{a.detail}}</span></span>
+<span style="display: flex; gap: 8px"><a href="#" style="text-decoration: none; background: #23271F; color: #F6F4EE; padding: 8px 14px; border-radius: 2px; font-size: 13px; font-weight: 600">Approve</a><a href="#" style="text-decoration: none; background: #ECEAE2; padding: 8px 14px; border-radius: 2px; font-size: 13px; font-weight: 600">Decline</a></span>
+</div>
+</sc-for>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<sc-for list="{{cats}}" as="c" hint-placeholder-count="8">
+<button type="button" onClick="{{c.pick}}" aria-pressed="{{c.on}}" style="border: none; border-radius: 2px; padding: 8px 14px; font-size: 13px; cursor: pointer; background: {{c.bg}}; color: {{c.fg}}">{{c.label}}</button>
+</sc-for>
+<label style="display: flex; align-items: center; background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 2px; padding: 0 10px; margin-left: auto; min-width: 220px"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Search vendors</span><input type="search" placeholder="Search name, city or phone" style="flex: 1; border: none; background: transparent; padding: 9px 0; font-size: 13px"></label>
+</div>
+
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 8px 22px; overflow-x: auto">
+<table style="width: 100%; min-width: 820px; border-collapse: collapse; font-size: 14px">
+<thead><tr style="text-align: left; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #4E5548"><th style="padding: 12px 8px 10px 0; font-weight: 600"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Select</span></th><th style="padding: 12px 8px 10px; font-weight: 600">Vendor</th><th style="padding: 12px 8px 10px; font-weight: 600">Category</th><th style="padding: 12px 8px 10px; font-weight: 600">City</th><th style="padding: 12px 8px 10px; font-weight: 600">Our rating</th><th style="padding: 12px 8px 10px; font-weight: 600">Last wedding</th><th style="padding: 12px 0 10px 8px; font-weight: 600">Contact</th></tr></thead>
+<tbody>
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="8">
+<tr style="border-top: 1px solid #ECEAE2"><td style="padding: 12px 8px 12px 0"><input type="checkbox" aria-label="Select {{r.name}}"></td><td style="padding: 12px 8px; font-weight: 600">{{r.name}}</td><td style="padding: 12px 8px">{{r.cat}}</td><td style="padding: 12px 8px">{{r.city}}</td><td style="padding: 12px 8px; color: #7E6233">{{r.rating}}</td><td style="padding: 12px 8px; color: #4E5548">{{r.last}}</td><td style="padding: 12px 0 12px 8px; white-space: nowrap"><a href="{{r.wa}}" target="_blank" rel="noopener" style="text-decoration: none; background: #1F7A45; color: #FFFFFF; padding: 6px 10px; border-radius: 2px; font-size: 12px; font-weight: 600">WhatsApp</a> <a href="AdminMessages.dc.html" style="text-decoration: none; background: #ECEAE2; padding: 6px 10px; border-radius: 2px; font-size: 12px; font-weight: 600">Email</a></td></tr>
+</sc-for>
+</tbody>
+</table>
+</section>
+<span style="font-size: 12px; color: #4E5548">Vendor names are placeholders. Ratings and notes are internal and never shown on the website.</span>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1200}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { cat: 'All' };
+}
+renderVals() {
+const active = this.state.cat;
+const wa = (name) => 'https://wa.me/910000000000?text=' + encodeURIComponent('Namaste ' + name + ', Wedlock here. Are you available on ');
+const all = [
+['Phoolwari Decor', 'Decor', 'Patna', '★★★★★', 'Pooja & Karan'],
+['Raag Sound & Light', 'Sound & light', 'Patna', '★★★★☆', 'Pooja & Karan'],
+['Bihar Caterers', 'Catering', 'Patna', '★★★★★', 'Pooja & Karan'],
+['Lens & Light Studio', 'Photo & film', 'New Delhi', '★★★★★', 'Sana & Imran'],
+['Mehendi by Nazia', 'Mehendi', 'Patna', '★★★★☆', 'Ankita & Anunay'],
+['Shagun Gifts', 'Return gifts', 'Patna', 'new', '—'],
+['Jharkhand Tent House', 'Decor', 'Ranchi', '★★★☆☆', 'Aditya & family'],
+['Dhol Gang Delhi', 'Entertainment', 'New Delhi', '★★★★★', 'Sana & Imran']
+].map(([name, cat, city, rating, last]) => ({ name, cat, city, rating, last, wa: wa(name) }));
+const labels = ['All', 'Decor', 'Catering', 'Photo & film', 'Sound & light', 'Mehendi', 'Entertainment', 'Return gifts'];
+return {
+kpis: [{ label: 'Active vendors', value: '64' }, { label: 'Patna · Ranchi · Delhi', value: '38 · 11 · 15' }, { label: 'Awaiting reply', value: '5' }, { label: 'Applications', value: '2' }],
+apps: [
+{ name: 'Gulmohar Florals', detail: 'Decor · Patna · applied 27 Oct · portfolio link attached' },
+{ name: 'Sufi Nights Live', detail: 'Entertainment · New Delhi · applied 25 Oct' }
+],
+cats: labels.map((label) => ({ label, on: label === active ? 'true' : 'false', bg: label === active ? '#23271F' : '#ECEAE2', fg: label === active ? '#F6F4EE' : '#23271F', pick: () => this.setState({ cat: label }) })),
+rows: all.filter((r) => active === 'All' || r.cat === active)
+};
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock — Ankita &amp; Anunay</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;family=Tiro+Devanagari+Hindi&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}a:hover{color:#56604A}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 17px; line-height: 1.6; color: #23271F; background: #F6F4EE">
+<dc-import name="Header" active="weddings" hint-size="100%,124px"></dc-import>
+
+<!-- HERO -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 40px 32px 0; display: flex; flex-direction: column; gap: 24px">
+<nav aria-label="Breadcrumb" style="font-size: 14px; color: #4E5548"><a href="Home.dc.html" style="color: #4E5548">Home</a> / <a href="Portfolio.dc.html" style="color: #4E5548">Weddings</a> / Ankita &amp; Anunay</nav>
+<div style="height: 640px; border-radius: 16px; position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 48px; box-sizing: border-box">
+<img src="/_blob/3e241a920e85b2247124e3fbf4c8e395" alt="Ankita and Anunay at their reception under strings of warm lights" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 30%">
+<div style="position: relative; background: #F6F4EE; border-radius: 8px; padding: 32px 36px; display: flex; flex-direction: column; gap: 10px; max-width: 620px">
+<span style="align-self: flex-start; color: #7E6233; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600">Reception · 20 May 2023</span>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(40px, 5vw, 68px); line-height: 1.02; letter-spacing: -0.02em">Ankita <em>&amp;</em> Anunay</h1>
+<p style="margin: 0; color: #4E5548">“All you need is love” — a celebration of gold frames, crystal strands and one black-and-white chevron floor that ran from the welcome walk to the sangeet stage.</p>
+</div>
+</div>
+</section>
+
+<!-- FACTS -->
+<section aria-label="Wedding at a glance" style="max-width: 1280px; margin: 0 auto; padding: 24px 32px 96px">
+<dl style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px">
+<sc-for list="{{facts}}" as="f" hint-placeholder-count="6">
+<div style="background: #ECEAE2; border-radius: 8px; padding: 18px 20px"><dt style="font-size: 13px; color: #4E5548">{{f.k}}</dt><dd style="margin: 2px 0 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px">{{f.v}}</dd></div>
+</sc-for>
+</dl>
+</section>
+
+<!-- BRIEF / APPROACH / RESULT -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 112px; display: flex; flex-direction: column; gap: 48px">
+<p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(28px, 3vw, 40px); line-height: 1.3; max-width: 26em">One graphic idea — a black-and-white chevron — carried through every event, so the whole celebration felt like a single, considered story.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 20px">
+<div style="background: #ECEAE2; border-radius: 12px; padding: 32px; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 13px; color: #7E6233; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">01 · The brief</span><p style="margin: 0; color: #4E5548; font-size: 16px">[What Ankita, Anunay and their families asked for — guest count, mood, non-negotiables.]</p></div>
+<div style="background: #ECEAE2; border-radius: 12px; padding: 32px; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 13px; color: #7E6233; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">02 · Our approach</span><p style="margin: 0; color: #4E5548; font-size: 16px">Monochrome chevron floors, gold-frame installations, crystal strands and a living green wall, lit warm against black drapes — with a personalised welcome board that set the tone at the door.</p></div>
+<div style="background: #ECEAE2; border-radius: 12px; padding: 32px; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 13px; color: #7E6233; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">03 · The result</span><p style="margin: 0; color: #4E5548; font-size: 16px">[One or two moments the family still talks about — in their words.]</p></div>
+</div>
+</section>
+
+<!-- EVENTS -->
+<section style="background: #DDE1D6">
+<div style="max-width: 1280px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 56px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(36px, 4vw, 58px); line-height: 1.08">The celebrations, <em>one by one</em></h2>
+<sc-for list="{{events}}" as="e" hint-placeholder-count="3">
+<article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 40px; align-items: center">
+<img src="{{e.img}}" alt="{{e.alt}}" style="display: block; width: 100%; height: 380px; object-fit: cover; object-position: {{e.pos}}; border-radius: 10px">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 13px; color: #3A4234; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">{{e.day}}</span>
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 36px; line-height: 1.1">{{e.title}}</h3>
+<p style="margin: 0; color: #3A4234">{{e.text}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px"><span style="background: #F6F4EE; border-radius: 2px; padding: 6px 12px">{{e.venue}}</span><span style="background: #F6F4EE; border-radius: 2px; padding: 6px 12px">{{e.palette}}</span></div>
+</div>
+</article>
+</sc-for>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 32px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(36px, 4vw, 58px); line-height: 1.08">Gallery</h2>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 220px; gap: 12px">
+<img src="/_blob/3e241a920e85b2247124e3fbf4c8e395" alt="Ankita and Anunay at the reception entrance" style="grid-column: span 2; grid-row: span 2; display: block; width: 100%; height: 100%; object-fit: cover; object-position: 60% 30%; border-radius: 10px">
+<img src="/_blob/f89d2e44015c11f50397469b072a159e" alt="A black-and-white portrait of the couple" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 35% 20%; border-radius: 10px">
+<img src="/_blob/63453a624848275dc5b41b881fa4e3e7" alt="The personalised welcome board on an easel" style="grid-row: span 2; display: block; width: 100%; height: 100%; object-fit: cover; object-position: 22% 50%; border-radius: 10px">
+<img src="/_blob/5b18d6ed66f138e70d661d827726df2b" alt="A living green wall with a ‘Better Together’ neon sign" style="display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 10px">
+<img src="/_blob/437dd7a9c2e2c4956ff16411ffb2eb10" alt="Family and friends dancing at the sangeet" style="grid-column: 1 / -1; display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; border-radius: 10px">
+</div>
+<span style="font-size: 14px; color: #4E5548">Photography: [Studio name] · Film: [Studio name]</span>
+</section>
+
+<!-- QUOTE -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 112px">
+<figure style="margin: 0; background: #23271F; color: #F6F4EE; border-radius: 16px; padding: 72px 64px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 40px; align-items: center">
+<blockquote style="grid-column: span 2; margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-style: italic; font-size: clamp(28px, 3vw, 40px); line-height: 1.3">“[Ankita and Anunay’s words about their celebration.]”</blockquote>
+<figcaption style="display: flex; align-items: center; gap: 16px"><img src="/_blob/f89d2e44015c11f50397469b072a159e" alt="" style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; object-position: 38% 30%"><span><strong style="font-weight: 500">Ankita &amp; Anunay</strong><br><span style="color: #BFC5B6">20 May 2023</span></span></figcaption>
+</figure>
+</section>
+
+<!-- CREDITS -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 112px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(32px, 3.4vw, 46px)">The team behind the day</h2>
+<p style="margin: 0; color: #4E5548">Celebration director: [Name] · Floor team: [N] people</p>
+</div>
+<dl style="grid-column: span 2; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0 32px; min-width: 0">
+<sc-for list="{{credits}}" as="c" hint-placeholder-count="8">
+<div style="display: flex; justify-content: space-between; gap: 12px; border-top: 1px solid #DAD7CC; padding: 14px 0"><dt style="color: #4E5548; font-size: 15px">{{c.k}}</dt><dd style="margin: 0; font-size: 15px; font-weight: 500">{{c.v}}</dd></div>
+</sc-for>
+</dl>
+</section>
+
+<!-- NEXT -->
+<section style="background: #ECEAE2">
+<div style="max-width: 1280px; margin: 0 auto; padding: 96px 32px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(32px, 3.4vw, 46px)">More wedding stories</h2>
+<a href="Portfolio.dc.html" style="text-decoration: none; background: #F6F4EE; padding: 15px 26px; border-radius: 2px; font-weight: 500">All weddings →</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 20px">
+<a href="WeddingStory.dc.html" style="text-decoration: none; background: #F6F4EE; border-radius: 12px; overflow: hidden; display: grid; grid-template-columns: 200px minmax(0, 1fr)"><img src="/_blob/5eb4ec150d2dafaecd8003c51af84546" alt="Srestha and Vishal’s floral stage" style="display: block; width: 100%; height: 100%; min-height: 200px; object-fit: cover"><div style="padding: 24px; display: flex; flex-direction: column; gap: 6px; justify-content: center"><span style="font-size: 13px; color: #4E5548">Wedding · Feb 2023</span><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px">Srestha &amp; Vishal</span><span style="font-weight: 500; font-size: 15px">Read →</span></div></a>
+<a href="WeddingStory.dc.html" style="text-decoration: none; background: #F6F4EE; border-radius: 12px; overflow: hidden; display: grid; grid-template-columns: 200px minmax(0, 1fr)"><img src="/_blob/bd8513b1884ab74ca72c5052dbe29977" alt="A couple at their haldi" style="display: block; width: 100%; height: 100%; min-height: 200px; object-fit: cover; object-position: 50% 25%"><div style="padding: 24px; display: flex; flex-direction: column; gap: 6px; justify-content: center"><span style="font-size: 13px; color: #4E5548">Haldi · [Year]</span><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px">[Couple] &amp; [Couple]</span><span style="font-weight: 500; font-size: 15px">Read →</span></div></a>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 112px 32px">
+<div style="background: #56604A; color: #F6F4EE; border-radius: 16px; padding: 64px 56px; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; align-items: center">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(32px, 3.6vw, 52px); line-height: 1.08; max-width: 14em">Tell us the occasion. <em>We’ll handle the magic.</em></h2>
+<a href="Contact.dc.html" style="text-decoration: none; background: #F6F4EE; color: #23271F; padding: 18px 32px; border-radius: 2px; font-weight: 500">Plan your celebration</a>
+</div>
+</section>
+
+<dc-import name="WhatsAppButton" message="Hi Wedlock! I saw Ankita &amp; Anunay's celebration on your website and would love something similar for our wedding." hint-size="0px,0px"></dc-import>
+<dc-import name="Footer" hint-size="100%,640px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6600}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+facts: [
+{ k: 'Reception', v: '20 May 2023' },
+{ k: 'Venue', v: '[Venue, City]' },
+{ k: 'Guests', v: '[000]' },
+{ k: 'Events', v: '[N] celebrations' },
+{ k: 'Service', v: '[Full Planning]' },
+{ k: 'Theme', v: 'All you need is love' }
+],
+events: [
+{ day: 'Cocktail night', title: 'Better Together', text: 'A living green wall with a “Better Together” neon, framed by black-and-silver mirrored panels and a chevron stage.', venue: '[Venue]', palette: 'Green · black · silver', img: '/_blob/5b18d6ed66f138e70d661d827726df2b', alt: 'A living green wall with a neon sign', pos: '50% 50%' },
+{ day: 'Sangeet', title: 'The whole family on the floor', text: 'Cascading greens and mirror discs overhead, haze and beams, and a chevron dance floor that never emptied.', venue: '[Venue]', palette: 'Emerald · chrome', img: '/_blob/437dd7a9c2e2c4956ff16411ffb2eb10', alt: 'Family and friends dancing', pos: '50% 40%' },
+{ day: 'Reception · 20 May 2023', title: 'All you need is love', text: 'A personalised welcome board at the door, then a walk of gold frames, crystal strands and fairy lights to the couple.', venue: '[Venue]', palette: 'Gold · crystal · black', img: '/_blob/63453a624848275dc5b41b881fa4e3e7', alt: 'The welcome board and gold-frame walkway', pos: '30% 50%' }
+],
+credits: [
+{ k: 'Planning & design', v: 'Wedlock' },
+{ k: 'Décor & styling', v: 'Wedlock styling studio' },
+{ k: 'Production', v: 'Wedlock / Eventoss' },
+{ k: 'Venue', v: '[Name]' },
+{ k: 'Catering', v: '[Name]' },
+{ k: 'Photography', v: '[Name]' },
+{ k: 'Make-up', v: '[Name]' },
+{ k: 'Music & DJ', v: '[Name]' }
+]
+};
+}
+}
+</script>
+</body>
+</html>

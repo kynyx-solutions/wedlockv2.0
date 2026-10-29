@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock admin — Media library</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}
+input,button,select{font:inherit}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 15px; line-height: 1.5; color: #23271F; background: #F6F4EE; min-height: 100vh; display: flex; flex-wrap: wrap">
+<dc-import name="AdminSidebar" active="media" hint-size="256px,1000px"></dc-import>
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; color: #4E5548">Website · 412 photos · 9 videos · sample data</span>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 44px; line-height: 1.05">Media library</h1>
+</div>
+
+<section style="border: 1.5px dashed #B8975F; background: #FFFFFF; border-radius: 12px; padding: 22px 24px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 4px; max-width: 560px">
+<strong style="font-weight: 600; font-size: 16px">Drop photos or videos here</strong>
+<span style="font-size: 13px; color: #4E5548">Photos are shrunk in your browser before upload and saved in four sizes as AVIF and WebP. Videos are trimmed to a short, silent loop. The original is kept safely in storage.</span>
+</div>
+<a href="#" style="text-decoration: none; background: #23271F; color: #F6F4EE; padding: 12px 18px; border-radius: 2px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">Choose files</a>
+<div style="flex: 1 1 100%; display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #ECEAE2; padding-top: 14px">
+<sc-for list="{{uploads}}" as="u" hint-placeholder-count="2">
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 220px auto; gap: 14px; align-items: center; font-size: 13px"><span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{u.name}}</span><span style="height: 6px; background: #ECEAE2; border-radius: 3px; overflow: hidden"><span style="display: block; height: 100%; width: {{u.pct}}; background: #56604A"></span></span><span style="color: #4E5548">{{u.note}}</span></div>
+</sc-for>
+</div>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{folders}}" as="f" hint-placeholder-count="6">
+<span style="background: {{f.bg}}; color: {{f.fg}}; border-radius: 2px; padding: 8px 14px; font-size: 13px">{{f.name}}</span>
+</sc-for>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px">
+<sc-for list="{{items}}" as="m" hint-placeholder-count="12">
+<figure style="margin: 0; background: #FFFFFF; border: {{m.border}}; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column">
+<img src="{{m.src}}" alt="{{m.alt}}" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block">
+<figcaption style="padding: 8px 10px; display: flex; flex-direction: column; gap: 2px; font-size: 12px"><span style="color: #56604A; font-weight: 600">{{m.size}}</span><span style="color: #4E5548">{{m.used}}</span></figcaption>
+</figure>
+</sc-for>
+</div>
+</div>
+
+<aside style="flex: 1 1 320px; background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 12px">
+<img src="/_blob/9c41f59830e2a3b308a03a5645044282" alt="A floral mandap of red gerberas with crystal lights" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Alt text (read aloud, helps Google)<input type="text" value="A floral mandap of red gerberas with crystal lights" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 10px; font-size: 14px"></label>
+<dl style="margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 13px">
+<dt style="color: #4E5548">Original</dt><dd style="margin: 0">6000 × 4000 · 8.4 MB JPG</dd>
+<dt style="color: #4E5548">Served</dt><dd style="margin: 0">AVIF 480 / 960 / 1600 / 2400 px</dd>
+<dt style="color: #4E5548">On a phone</dt><dd style="margin: 0; color: #56604A; font-weight: 600">62 KB (99% smaller)</dd>
+</dl>
+<div style="display: flex; flex-direction: column; gap: 4px; border-top: 1px solid #ECEAE2; padding-top: 12px">
+<strong style="font-weight: 600; font-size: 14px">Used in 4 places</strong>
+<sc-for list="{{usedIn}}" as="w" hint-placeholder-count="4"><span style="font-size: 13px; color: #4E5548">{{w}}</span></sc-for>
+</div>
+<a href="#" style="text-decoration: none; text-align: center; background: #23271F; color: #F6F4EE; padding: 12px; border-radius: 2px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">Replace everywhere</a>
+<span style="font-size: 12px; color: #4E5548">Upload a new photo and all 4 places update together. The old one stays in Trash for 30 days.</span>
+</aside>
+</div>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1400}}'>
+class Component extends DCLogic {
+renderVals() {
+const pics = [
+['9c41f59830e2a3b308a03a5645044282', 'A floral mandap of red gerberas with crystal lights', '8.4 MB → 62 KB', 'Used in 4 places', true],
+['bd8513b1884ab74ca72c5052dbe29977', 'A couple at their haldi', '6.1 MB → 48 KB', 'Used in 2 places'],
+['437dd7a9c2e2c4956ff16411ffb2eb10', 'Guests dancing at a sangeet', '7.2 MB → 55 KB', 'Used in 3 places'],
+['5eb4ec150d2dafaecd8003c51af84546', 'Srestha and Vishal’s floral stage', '5.8 MB → 51 KB', 'Used in 1 place'],
+['3e241a920e85b2247124e3fbf4c8e395', 'Ankita and Anunay at their reception', '9.0 MB → 66 KB', 'Used in 2 places'],
+['f89d2e44015c11f50397469b072a159e', 'A couple under fairy lights in black and white', '4.9 MB → 39 KB', 'Used in 1 place'],
+['5b18d6ed66f138e70d661d827726df2b', 'A living green wall installation with a neon sign', '6.6 MB → 57 KB', 'Not used yet'],
+['63453a624848275dc5b41b881fa4e3e7', 'Ankita and Anunay’s welcome board', '3.7 MB → 31 KB', 'Used in 1 place'],
+['6ca31c696a0c519f12e27d0f02982433', 'Pink sandstone palace architecture in Jaipur', '7.7 MB → 58 KB', 'Used in 2 places'],
+['50ee3792317892b61dc1dce1fe13edb4', 'Kerala backwaters', '5.2 MB → 44 KB', 'Used in 1 place'],
+['74f8be434168ed576c8d3d7186b9e4c4', 'The Dubai skyline', '4.4 MB → 41 KB', 'Used in 1 place'],
+['0cffdfa2edd287f58bdc1c8dee086bfa', 'Tuscan vineyard hills', '6.0 MB → 50 KB', 'Used in 1 place']
+];
+const folder = 'All';
+return {
+uploads: [
+{ name: 'pooja-karan-sangeet-0142.jpg', pct: '100%', note: '7.9 MB → 58 KB ✓' },
+{ name: 'pooja-karan-haldi-loop.mp4', pct: '64%', note: 'Compressing video…' }
+],
+folders: ['All', 'Weddings', 'Destinations', 'Team', 'Journal', 'Videos'].map((name) => ({ name, bg: name === folder ? '#23271F' : '#ECEAE2', fg: name === folder ? '#F6F4EE' : '#23271F' })),
+items: pics.map(([id, alt, size, used, sel]) => ({ src: '/_blob/' + id, alt, size, used, border: sel ? '2px solid #7E6233' : '1px solid #DAD7CC' })),
+usedIn: ['Home · hero', 'Services · Decor & design', 'Weddings · Srestha & Vishal (cover)', 'Journal · Mandap ideas for 2027']
+};
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock — Careers</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;family=Tiro+Devanagari+Hindi&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}a:hover{color:#56604A}
+select{font:inherit}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 17px; line-height: 1.6; color: #23271F; background: #F6F4EE">
+<dc-import name="Header" active="careers" hint-size="100%,124px"></dc-import>
+
+<!-- HERO -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 48px 32px 96px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr)); gap: 48px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 24px">
+<nav aria-label="Breadcrumb" style="font-size: 14px; color: #4E5548"><a href="Home.dc.html" style="color: #4E5548">Home</a> / Careers</nav>
+<span style="align-self: flex-start; color: #7E6233; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600">We’re hiring · [N] open roles</span>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(46px, 5.6vw, 80px); line-height: 1.02; letter-spacing: -0.025em">Build the most important days <em>of people’s lives.</em></h1>
+<p style="margin: 0; font-size: 19px; color: #4E5548">Join our planners, stylists, carpenters, light designers, choreographers and travel agents in Patna, Ranchi and New Delhi.</p>
+<a href="#roles" style="align-self: flex-start; text-decoration: none; background: #56604A; color: #F6F4EE; padding: 17px 30px; border-radius: 2px; font-weight: 500">See open roles</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<img src="/_blob/437dd7a9c2e2c4956ff16411ffb2eb10" alt="Guests dancing at a sangeet produced by Wedlock" style="grid-row: span 2; display: block; width: 100%; height: 100%; min-height: 520px; object-fit: cover; object-position: 45% 45%; border-radius: 4px">
+<img src="/_blob/9c41f59830e2a3b308a03a5645044282" alt="A floral mandap built by the Wedlock styling studio" style="display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 4px">
+<div style="border-radius: 4px; background: #23271F; color: #F6F4EE; padding: 24px; display: flex; flex-direction: column; justify-content: flex-end"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; font-weight: 300; line-height: 1">650+</span><span style="font-size: 14px; color: #BFC5B6">celebrations, 3 offices</span></div>
+</div>
+</section>
+
+<!-- PERKS -->
+<section style="background: #ECEAE2">
+<div style="max-width: 1280px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 48px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(36px, 4vw, 58px); line-height: 1.08">Why people stay</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px">
+<sc-for list="{{perks}}" as="p" hint-placeholder-count="6">
+<article style="background: #F6F4EE; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px">{{p.title}}</span>
+<span style="font-size: 15px; color: #4E5548">{{p.text}}</span>
+</article>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- ROLES -->
+<section id="roles" style="max-width: 1280px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(36px, 4vw, 58px); line-height: 1.08">Open roles</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<label style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: #4E5548">Team<select style="border: none; background: #ECEAE2; border-radius: 2px; padding: 11px 16px; font-size: 15px; color: #23271F"><option>All teams</option><option>Planning</option><option>Design</option><option>Production</option><option>Hospitality</option><option>Sales</option></select></label>
+<label style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: #4E5548">City<select style="border: none; background: #ECEAE2; border-radius: 2px; padding: 11px 16px; font-size: 15px; color: #23271F"><option>All cities</option><option>Patna</option><option>Ranchi</option><option>New Delhi</option></select></label>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{roles}}" as="r" hint-placeholder-count="8">
+<a href="Contact.dc.html" style="text-decoration: none; background: #ECEAE2; border-radius: 8px; padding: 22px 28px; display: grid; grid-template-columns: minmax(0, 2.4fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) auto; gap: 16px; align-items: center">
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px">{{r.title}}</span>
+<span style="font-size: 15px; color: #4E5548">{{r.team}}</span>
+<span style="font-size: 15px; color: #4E5548">{{r.city}}</span>
+<span style="font-size: 15px; color: #4E5548">{{r.type}}</span>
+<span style="background: #F6F4EE; border-radius: 2px; padding: 10px 18px; font-size: 14px; font-weight: 500">Apply →</span>
+</a>
+</sc-for>
+</div>
+</section>
+
+<!-- PROCESS -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 112px">
+<div style="background: #23271F; color: #F6F4EE; border-radius: 8px; padding: 64px 56px; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(32px, 3.4vw, 48px)">How we hire</h2>
+<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px">
+<li style="display: flex; flex-direction: column; gap: 10px"><span style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #8E9784; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', Georgia, serif">1</span><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px">Apply</span><span style="font-size: 15px; color: #BFC5B6">CV and, for designers, a portfolio.</span></li>
+<li style="display: flex; flex-direction: column; gap: 10px"><span style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #8E9784; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', Georgia, serif">2</span><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px">Conversation</span><span style="font-size: 15px; color: #BFC5B6">A 30-minute call with the team lead.</span></li>
+<li style="display: flex; flex-direction: column; gap: 10px"><span style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #8E9784; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', Georgia, serif">3</span><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px">Task</span><span style="font-size: 15px; color: #BFC5B6">A short, paid planning or design exercise.</span></li>
+<li style="display: flex; flex-direction: column; gap: 10px"><span style="width: 44px; height: 44px; border-radius: 50%; background: #F6F4EE; color: #23271F; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', Georgia, serif">4</span><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px">Offer</span><span style="font-size: 15px; color: #BFC5B6">Meet the founders, then an offer within a week.</span></li>
+</ol>
+</div>
+</section>
+
+<!-- INTERNSHIP -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 112px">
+<div style="background: #DDE1D6; border-radius: 8px; padding: 56px; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 640px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(30px, 3.2vw, 44px); line-height: 1.1">Wedlock Academy — season internships</h2>
+<span style="color: #3A4234">A [6]-month programme for hospitality and design graduates. Applications open every [July].</span>
+</div>
+<a href="Contact.dc.html" style="text-decoration: none; background: #56604A; color: #F6F4EE; padding: 17px 30px; border-radius: 2px; font-weight: 500">Register interest</a>
+</div>
+</section>
+
+<dc-import name="WhatsAppButton" message="Hi Wedlock! I'd like to join your team. Could you share the open roles and how to apply?" hint-size="0px,0px"></dc-import>
+<dc-import name="Footer" hint-size="100%,640px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4600}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+perks: [
+{ title: 'Learn from 650+ celebrations', text: 'Shadow senior celebration directors from the first meeting to the last guest.' },
+{ title: 'Travel with purpose', text: 'Work on weddings across 40+ cities — Rajasthan, Goa, Kerala and abroad.' },
+{ title: 'Peak-season bonus', text: '[Bonus structure] for every wedding you lead.' },
+{ title: 'Off-season rest', text: '[N] extra days off in the quiet months.' },
+{ title: 'Health cover', text: '[Insurance details] for you and your family.' },
+{ title: 'Grow into a lead', text: 'A clear path from coordinator to lead planner.' }
+],
+roles: [
+{ title: 'Senior Wedding Planner', team: 'Planning', city: 'Patna', type: 'Full-time' },
+{ title: 'Wedding Planner', team: 'Planning', city: 'Ranchi', type: 'Full-time' },
+{ title: 'Décor Designer (3D)', team: 'Design', city: 'New Delhi', type: 'Full-time' },
+{ title: 'Production Manager', team: 'Production', city: 'Patna', type: 'Full-time' },
+{ title: 'Hospitality Coordinator', team: 'Hospitality', city: 'Patna', type: 'Full-time' },
+{ title: 'Guest Relations Executive', team: 'Hospitality', city: 'Destinations (travel)', type: 'Seasonal' },
+{ title: 'Client Relationship Manager', team: 'Sales', city: 'New Delhi', type: 'Full-time' },
+{ title: 'Social Media & Content Lead', team: 'Marketing', city: 'Patna', type: 'Full-time' }
+]
+};
+}
+}
+</script>
+</body>
+</html>

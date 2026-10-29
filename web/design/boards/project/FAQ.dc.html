@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock — Frequently asked questions</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;family=Tiro+Devanagari+Hindi&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}a:hover{color:#56604A}
+button{font:inherit}
+details summary{cursor:pointer}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 17px; line-height: 1.6; color: #23271F; background: #F6F4EE">
+<dc-import name="Header" active="contact" hint-size="100%,124px"></dc-import>
+
+<section style="max-width: 1280px; margin: 0 auto; padding: 48px 32px 56px; display: flex; flex-direction: column; gap: 28px">
+<nav aria-label="Breadcrumb" style="font-size: 14px; color: #4E5548"><a href="Home.dc.html" style="color: #4E5548">Home</a> / FAQ</nav>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 40px; align-items: end">
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(46px, 6vw, 84px); line-height: 1.02; letter-spacing: -0.025em">Questions families <em>ask us most</em></h1>
+<p style="margin: 0; font-size: 20px; color: #4E5548">Straight answers on planning, pricing, destinations and the wedding day. Can’t find yours? A planner will answer on WhatsApp.</p>
+</div>
+<div role="group" aria-label="Filter questions" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="5">
+<button type="button" onClick="{{t.pick}}" aria-pressed="{{t.pressed}}" style="border: none; border-radius: 2px; padding: 12px 20px; font-size: 15px; cursor: pointer; background: {{t.bg}}; color: {{t.fg}}">{{t.label}}</button>
+</sc-for>
+</div>
+</section>
+
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 112px; display: flex; flex-direction: column; gap: 56px">
+<sc-for list="{{groups}}" as="g" hint-placeholder-count="4">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 32px; border-top: 1px solid #23271F; padding-top: 28px">
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="color: #7E6233; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600">{{g.count}} questions</span><h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 40px; line-height: 1.1">{{g.name}}</h2></div>
+<div style="grid-column: span 2; display: flex; flex-direction: column; gap: 10px; min-width: 0">
+<sc-for list="{{g.items}}" as="q" hint-placeholder-count="4">
+<details style="background: #ECEAE2; border-radius: 8px; padding: 20px 24px"><summary style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px">{{q.q}}</summary><p style="margin: 10px 0 0; color: #4E5548; font-size: 16px">{{q.a}}</p></details>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</section>
+
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 112px">
+<div style="background: #DDE1D6; border-radius: 16px; padding: 56px; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 640px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(32px, 3.6vw, 52px); line-height: 1.08">Still have a question?</h2>
+<span style="color: #3A4234">Ask a planner — on WhatsApp, on a call, or at our Patna, Ranchi or Delhi studio.</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px"><a href="https://wa.me/917061528402" style="text-decoration: none; background: #23271F; color: #F6F4EE; padding: 17px 28px; border-radius: 2px; font-weight: 500">WhatsApp a planner</a><a href="Contact.dc.html" style="text-decoration: none; background: #F6F4EE; padding: 17px 28px; border-radius: 2px; font-weight: 500">Contact us</a></div>
+</div>
+</section>
+
+<dc-import name="WhatsAppButton" message="Hi Wedlock! I have a question about planning my wedding." hint-size="0px,0px"></dc-import>
+<dc-import name="Footer" hint-size="100%,640px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3800}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { filter: 'all' };
+}
+renderVals() {
+const all = [
+{ key: 'planning', name: 'Planning', items: [
+{ q: 'How early should we book Wedlock?', a: 'For full planning, 9–12 months before the wedding; for destination weddings, 12–14 months. Shorter timelines are often possible — ask us.' },
+{ q: 'Is the first consultation free?', a: 'Yes. Your first meeting with our wedding consultants is free and carries no obligation.' },
+{ q: 'Can we bring our own vendors?', a: 'Yes. We brief and coordinate your family’s vendors alongside ours.' },
+{ q: 'Will one person handle our wedding?', a: 'A dedicated celebration director leads your wedding from the first meeting, supported by our specialist teams.' }
+] },
+{ key: 'pricing', name: 'Pricing & payments', items: [
+{ q: 'How is your fee calculated?', a: 'A planning fee based on the number of events, guests and the location. Vendor costs are quoted separately and shown in one shared portal.' },
+{ q: 'What is the payment schedule?', a: '[Booking amount on signing, staged payments, balance before the wedding week — to be confirmed by Wedlock.]' },
+{ q: 'What if we postpone or cancel?', a: '[Postponement and cancellation policy — to be confirmed by Wedlock.]' }
+] },
+{ key: 'destinations', name: 'Destinations', items: [
+{ q: 'Where do you plan destination weddings?', a: 'Our destination desk has scouted 40+ cities across 14 countries, including Udaipur, Jaipur, Goa, Kerala, Bali, Phuket, Tuscany and Dubai.' },
+{ q: 'Do you handle guest travel and rooms?', a: 'Yes — room blocks, flight and train coordination, airport pickups and a help desk at the venue.' },
+{ q: 'Can our family pandit travel with us?', a: 'Yes. We arrange travel and stay for your pandit and the puja samagri.' }
+] },
+{ key: 'day', name: 'On the day', items: [
+{ q: 'How many of your team are on site?', a: '[Team size per event — to be confirmed by Wedlock.] Our floor team arrives before setup and stays until the last guest leaves.' },
+{ q: 'What happens if it rains?', a: 'Every outdoor event has a rain plan agreed in advance, so the switch is quick and calm.' },
+{ q: 'Who looks after elders and children?', a: 'Our hospitality team arranges seating, transport and a help desk for elders, and a kids’ zone on request.' }
+] }
+];
+const active = this.state.filter;
+const opts = [['all', 'All'], ['planning', 'Planning'], ['pricing', 'Pricing & payments'], ['destinations', 'Destinations'], ['day', 'On the day']];
+const tabs = opts.map(([key, label]) => ({ label, pressed: key === active ? 'true' : 'false', bg: key === active ? '#23271F' : '#ECEAE2', fg: key === active ? '#F6F4EE' : '#23271F', pick: () => this.setState({ filter: key }) }));
+const groups = all.filter((g) => active === 'all' || g.key === active).map((g) => ({ ...g, count: g.items.length }));
+return { tabs, groups };
+}
+}
+</script>
+</body>
+</html>

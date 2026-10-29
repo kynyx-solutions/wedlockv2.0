@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock admin — Site content</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}
+input,button,select,textarea{font:inherit}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 15px; line-height: 1.5; color: #23271F; background: #F6F4EE; min-height: 100vh; display: flex; flex-wrap: wrap">
+<dc-import name="AdminSidebar" active="content" hint-size="256px,1000px"></dc-import>
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; color: #4E5548">Website · changes go live in about a minute</span>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 44px; line-height: 1.05">Site content</h1>
+</div>
+<a href="#" style="text-decoration: none; background: #23271F; color: #F6F4EE; padding: 12px 18px; border-radius: 2px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">Publish changes</a>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+<nav aria-label="Sections" style="flex: 1 1 200px; max-width: 240px; display: flex; flex-direction: column; gap: 2px">
+<sc-for list="{{sections}}" as="s" hint-placeholder-count="8">
+<a href="#" style="text-decoration: none; padding: 9px 12px; border-radius: 4px; font-size: 14px; background: {{s.bg}}; font-weight: {{s.weight}}">{{s.name}}</a>
+</sc-for>
+</nav>
+
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 28px">Home · hero</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Background photo<img src="/_blob/9c41f59830e2a3b308a03a5645044282" alt="A floral mandap of red gerberas with crystal lights" style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px"><a href="AdminMedia.dc.html" style="font-weight: 400">Change from Media library</a></div>
+<div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Background video (optional)<span style="aspect-ratio: 16 / 9; background: #ECEAE2; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 12px; font-weight: 400; color: #4E5548; font-size: 13px">8-second silent loop · 720p · max 2.5 MB. Phones on slow data see the photo instead.</span></div>
+</div>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Headline<input type="text" value="Weddings planned with family, run with precision." style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 10px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Line below<input type="text" value="Patna · Ranchi · New Delhi · destinations across India and abroad. Since 2014." style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 10px; font-size: 14px; font-weight: 400"></label>
+</section>
+
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 4px">
+<h2 style="margin: 0 0 6px; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 28px">WhatsApp first messages</h2>
+<span style="font-size: 13px; color: #4E5548; margin-bottom: 6px">What the visitor's WhatsApp opens with, on each page.</span>
+<sc-for list="{{wa}}" as="w" hint-placeholder-count="6">
+<label style="display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 12px; align-items: center; padding: 8px 0; border-top: 1px solid #ECEAE2; font-size: 13px; font-weight: 600">{{w.page}}<input type="text" value="{{w.msg}}" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 9px; font-size: 13px; font-weight: 400"></label>
+</sc-for>
+</section>
+
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 20px 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px 20px">
+<h2 style="grid-column: 1 / -1; margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 28px">Contact details (used site-wide)</h2>
+<sc-for list="{{contact}}" as="c" hint-placeholder-count="4">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">{{c.k}}<input type="text" value="{{c.v}}" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 10px; font-size: 14px; font-weight: 400"></label>
+</sc-for>
+</section>
+</div>
+</div>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1400}}'>
+class Component extends DCLogic {
+renderVals() {
+const names = ['Home', 'About & team', 'Services', 'Destinations', 'Contact & offices', 'Testimonials', 'FAQ', 'Footer & social', 'SEO defaults'];
+return {
+sections: names.map((name, i) => ({ name, bg: i === 0 ? '#FFFFFF' : 'transparent', weight: i === 0 ? '600' : '400' })),
+wa: [
+['Home', 'Hi Wedlock, we are planning our wedding and would like to talk.'],
+['Services', 'Hi Wedlock, I’d like to know about your planning packages.'],
+['Destinations · Jaipur', 'Hi Wedlock, we are thinking of a wedding in Jaipur.'],
+['Weddings (portfolio)', 'Hi Wedlock, we loved your past weddings. Can we talk about ours?'],
+['Patna city page', 'Hi Wedlock, we are planning a wedding in Patna.'],
+['Partner with us', 'Hi Wedlock, I am a vendor and would like to work with you.']
+].map(([page, msg]) => ({ page, msg })),
+contact: [
+{ k: 'Phone & WhatsApp', v: '+91 70615 28402' }, { k: 'Email', v: 'info@wedlock.co.in' },
+{ k: 'Patna studio', v: '208-A Kaushalya Estate, Dak Bunglow Road' }, { k: 'Instagram', v: '[handle]' }
+]
+};
+}
+}
+</script>
+</body>
+</html>

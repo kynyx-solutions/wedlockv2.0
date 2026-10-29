@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock — Journal</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;family=Tiro+Devanagari+Hindi&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}a:hover{color:#56604A}
+input,button{font:inherit}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 17px; line-height: 1.6; color: #23271F; background: #F6F4EE">
+<dc-import name="Header" active="journal" hint-size="100%,124px"></dc-import>
+
+<!-- HERO -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 48px 32px 40px; display: flex; flex-direction: column; gap: 28px">
+<nav aria-label="Breadcrumb" style="font-size: 14px; color: #4E5548"><a href="Home.dc.html" style="color: #4E5548">Home</a> / Journal</nav>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 40px; align-items: end">
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(46px, 6vw, 84px); line-height: 1.02; letter-spacing: -0.025em">The Wedlock <em>Journal</em></h1>
+<p style="margin: 0; font-size: 20px; color: #4E5548">Notes from the celebration desk — real celebrations we produced, planning blueprints we actually use, and the design directions our studio is chasing this season.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center">
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<a href="#" style="text-decoration: none; background: #23271F; color: #F6F4EE; padding: 11px 18px; border-radius: 2px; font-size: 15px">All</a>
+<a href="#" style="text-decoration: none; background: #ECEAE2; padding: 11px 18px; border-radius: 2px; font-size: 15px">Real weddings</a>
+<a href="#" style="text-decoration: none; background: #ECEAE2; padding: 11px 18px; border-radius: 2px; font-size: 15px">Planning guides</a>
+<a href="#" style="text-decoration: none; background: #ECEAE2; padding: 11px 18px; border-radius: 2px; font-size: 15px">Trends</a>
+<a href="#" style="text-decoration: none; background: #ECEAE2; padding: 11px 18px; border-radius: 2px; font-size: 15px">Behind the scenes</a>
+</div>
+<label style="display: flex; align-items: center; gap: 10px; background: #ECEAE2; border-radius: 2px; padding: 4px 6px 4px 18px; min-width: 280px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Search articles</span>
+<input type="search" placeholder="Search articles" style="flex: 1; border: none; background: transparent; padding: 10px 0; font-size: 15px; color: #23271F">
+</label>
+</div>
+</section>
+
+<!-- FEATURED -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 72px">
+<a href="#" style="text-decoration: none; background: #ECEAE2; border-radius: 8px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr))">
+<img src="/_blob/904e3bc798e4182be21aba245ae8f969" alt="" style="display: block; width: 100%; height: 100%; min-height: 440px; object-fit: cover">
+<div style="padding: 48px; display: flex; flex-direction: column; gap: 16px; justify-content: center">
+<span style="align-self: flex-start; background: #F6F4EE; padding: 6px 14px; border-radius: 2px; font-size: 13px; font-weight: 500">Editor’s pick · Planning guide</span>
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 40px; font-weight: 300; line-height: 1.12">The destination wedding timeline: a 12-month blueprint</span>
+<span style="color: #4E5548">When to scout, when to book the block, when to fly the florist in.</span>
+<span style="font-size: 14px; color: #4E5548">Wedlock celebration desk · 10 min read · 28 January 2026</span>
+</div>
+</a>
+</section>
+
+<!-- GRID -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 96px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 32px 24px">
+<sc-for list="{{posts}}" as="p" hint-placeholder-count="9">
+<a href="#" style="text-decoration: none; display: flex; flex-direction: column; gap: 12px">
+<div style="height: 240px; border-radius: 10px; background: #C9CEC0; position: relative; overflow: hidden"><sc-if value="{{p.hasImg}}" hint-placeholder-val="{{ true }}"><img src="{{p.img}}" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: {{p.pos}}"></sc-if><sc-if value="{{p.noImg}}" hint-placeholder-val="{{ false }}"><span style="position: absolute; left: 16px; bottom: 14px; font-size: 12px; color: #3A4234">Photo from the wedding to come</span></sc-if></div>
+<span style="font-size: 13px; color: #7E6233; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">{{p.cat}} · {{p.date}} · {{p.read}}</span>
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; line-height: 1.25">{{p.title}}</span>
+<span style="font-size: 15px; color: #4E5548">{{p.dek}}</span>
+</a>
+</sc-for>
+</div>
+<nav aria-label="Pagination" style="display: flex; gap: 8px; justify-content: center">
+<a href="#" aria-current="page" style="text-decoration: none; width: 44px; height: 44px; border-radius: 50%; background: #23271F; color: #F6F4EE; display: flex; align-items: center; justify-content: center">1</a>
+<a href="#" style="text-decoration: none; width: 44px; height: 44px; border-radius: 50%; background: #ECEAE2; display: flex; align-items: center; justify-content: center">2</a>
+<a href="#" style="text-decoration: none; width: 44px; height: 44px; border-radius: 50%; background: #ECEAE2; display: flex; align-items: center; justify-content: center">3</a>
+<a href="#" style="text-decoration: none; height: 44px; padding: 0 18px; border-radius: 2px; background: #ECEAE2; display: flex; align-items: center">Next →</a>
+</nav>
+</section>
+
+<!-- DOWNLOAD -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 112px">
+<div style="background: #DDE1D6; border-radius: 8px; padding: 56px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 40px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="align-self: flex-start; background: #F6F4EE; padding: 6px 14px; border-radius: 2px; font-size: 13px; font-weight: 500">Free download</span>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(32px, 3.4vw, 48px); line-height: 1.1">The destination wedding blueprint (PDF)</h2>
+<p style="margin: 0; color: #3A4234">When to scout, book the block and fly the florist in — the same 12-month plan our destination desk uses.</p>
+</div>
+<form style="display: flex; flex-wrap: wrap; gap: 10px">
+<label style="flex: 1 1 240px; display: flex"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Email address</span><input type="email" placeholder="Your email address" style="flex: 1; border: none; border-radius: 2px; background: #F6F4EE; padding: 16px 20px; font-size: 16px; color: #23271F"></label>
+<button type="submit" style="border: none; border-radius: 2px; background: #56604A; color: #F6F4EE; padding: 16px 26px; font-size: 15px; font-weight: 500; cursor: pointer">Send me the PDF</button>
+</form>
+</div>
+</section>
+
+<dc-import name="WhatsAppButton" message="Hi Wedlock! I was reading your Journal and have a few questions about planning my wedding." hint-size="0px,0px"></dc-import>
+<dc-import name="Footer" hint-size="100%,640px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4400}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+posts: [
+{ cat: 'Real wedding', date: '14 Feb 2026', read: '8 min', title: 'Aisha & Arjun: three days on the lake of palaces', dek: 'Lakeside pheras timed to sunset and a mirrored sangeet stage for 320 guests.', img: '', pos: '50% 50%' },
+{ cat: 'Trends', date: '6 Jan 2026', read: '6 min', title: 'Five décor directions defining 2026 celebrations', dek: 'Sculptural florals, heritage revival, monochrome drama and the quiet death of the photo booth.', img: '/_blob/592793432e318ec051390f4f06b57c9c', pos: '50% 50%' },
+{ cat: 'Real wedding', date: '12 Dec 2025', read: '7 min', title: 'Fifty years, one evening: inside the Mehta golden jubilee', dek: 'Rebuilding 1975 for two hundred and sixty guests.', img: '/_blob/c3dc519773ba2b7e21a9b476227df5fe', pos: '50% 50%' },
+{ cat: 'Trends', date: '18 Nov 2025', read: '5 min', title: 'The 60-guest wedding: why small is the new statement', dek: 'Guest lists are shrinking; budgets aren’t.', img: '/_blob/c32db69509f5300f1b5b70331309a85c', pos: '50% 50%' },
+{ cat: 'Planning guide', date: '2 Oct 2025', read: '6 min', title: 'Rain plans that don’t look like regret', dek: 'Backup plans guests assume were the original plan.', img: '/_blob/32b8507a44669a0355cef06b54211c1e', pos: '50% 50%' },
+{ cat: 'Behind the scenes', date: '30 Aug 2025', read: '7 min', title: 'The modern family reunion: a playbook', dek: 'Diaspora families are gathering with intention again.', img: '/_blob/411b676901da8c37ee7bb6438e80574e', pos: '50% 50%' },
+{ cat: 'Planning guide', date: '15 Jul 2025', read: '6 min', title: 'How to choose a celebration planner: 9 questions that matter', dek: 'Beyond the Instagram grid — the questions that reveal whether a team can actually execute.', img: '/_blob/bad53fd2a5b2d9a855a410095b1413aa', pos: '50% 50%' }
+].map((p) => ({ ...p, hasImg: !!p.img, noImg: !p.img }))
+};
+}
+}
+</script>
+</body>
+</html>

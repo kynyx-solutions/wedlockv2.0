@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock — Destinations</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;family=Tiro+Devanagari+Hindi&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}a:hover{color:#56604A}
+button{font:inherit}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 17px; line-height: 1.6; color: #23271F; background: #F6F4EE">
+<dc-import name="Header" active="destinations" hint-size="100%,124px"></dc-import>
+
+<!-- HERO -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 48px 32px 56px; display: flex; flex-direction: column; gap: 28px">
+<nav aria-label="Breadcrumb" style="font-size: 14px; color: #4E5548"><a href="Home.dc.html" style="color: #4E5548">Home</a> / Destinations</nav>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 40px; align-items: end">
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(46px, 6vw, 84px); line-height: 1.02; letter-spacing: -0.025em">From palaces to beaches, <em>we know the way.</em></h1>
+<p style="margin: 0; font-size: 20px; color: #4E5548">Eight of our most-produced destinations — and a destination desk that has scouted forty more, across 14 countries. Where should your story unfold?</p>
+</div>
+</section>
+
+<!-- FEATURED -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 72px">
+<a href="ServiceDetail.dc.html" style="text-decoration: none; background: #23271F; color: #F6F4EE; border-radius: 8px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr))">
+<img src="/_blob/6ca31c696a0c519f12e27d0f02982433" alt="Pink sandstone palace architecture in Jaipur" style="display: block; width: 100%; height: 100%; min-height: 480px; object-fit: cover">
+<div style="padding: 48px; display: flex; flex-direction: column; gap: 18px; justify-content: center">
+<span style="align-self: flex-start; background: #2E3328; color: #DCE0D4; padding: 6px 14px; border-radius: 2px; font-size: 13px; font-weight: 500">Signature · Rajasthan</span>
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 52px; font-weight: 300; line-height: 1">Udaipur &amp; Jaipur</span>
+<span style="color: #BFC5B6">The city of lakes, built for weddings — and pink sandstone, elephant arches and royal scale.</span>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; border-top: 1px solid #4E5548; padding-top: 18px">
+<div><div style="font-size: 13px; color: #BFC5B6">Best season</div><div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px">Oct – Mar</div></div>
+<div><div style="font-size: 13px; color: #BFC5B6">Udaipur guests</div><div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px">150 – 800</div></div>
+<div><div style="font-size: 13px; color: #BFC5B6">Jaipur guests</div><div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px">200 – 1,200</div></div>
+</div>
+<span style="font-weight: 500">Plan a Rajasthan wedding →</span>
+</div>
+</a>
+</section>
+
+<!-- FILTER + GRID -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 112px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center">
+<div role="group" aria-label="Filter destinations" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{filters}}" as="f" hint-placeholder-count="6">
+<button type="button" onClick="{{f.pick}}" aria-pressed="{{f.pressed}}" style="border: none; border-radius: 2px; padding: 12px 20px; font-size: 15px; cursor: pointer; background: {{f.bg}}; color: {{f.fg}}">{{f.label}}</button>
+</sc-for>
+</div>
+<span style="font-size: 15px; color: #4E5548">{{count}} destinations</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 20px">
+<sc-for list="{{shown}}" as="item" hint-placeholder-count="9">
+<a href="ServiceDetail.dc.html" style="text-decoration: none; background: #ECEAE2; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 260px; background: #C9CEC0; position: relative; overflow: hidden"><sc-if value="{{item.hasImg}}" hint-placeholder-val="{{ true }}"><img src="{{item.img}}" alt="{{item.name}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></sc-if><sc-if value="{{item.noImg}}" hint-placeholder-val="{{ false }}"><span style="position: absolute; left: 16px; bottom: 14px; font-size: 12px; color: #3A4234">Photo to come</span></sc-if><span style="position: absolute; left: 16px; top: 16px; background: #F6F4EE; border-radius: 2px; padding: 6px 12px; font-size: 13px; font-weight: 500">{{item.typeLabel}}</span></div>
+<div style="padding: 22px 26px 26px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px">{{item.name}}</span><span style="font-size: 14px; color: #4E5548">{{item.region}}</span></div>
+<span style="font-size: 15px; color: #4E5548">{{item.text}}</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px"><span style="background: #F6F4EE; border-radius: 2px; padding: 4px 12px">Best {{item.season}}</span><span style="background: #F6F4EE; border-radius: 2px; padding: 4px 12px">Up to {{item.guests}} guests</span></div>
+</div>
+</a>
+</sc-for>
+</div>
+</section>
+
+<!-- VENUE PARTNERS -->
+<section style="background: #ECEAE2">
+<div style="max-width: 1280px; margin: 0 auto; padding: 72px 32px; display: flex; flex-direction: column; gap: 28px; align-items: center; text-align: center">
+<span style="font-size: 14px; color: #4E5548">Every destination comes with</span>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 48px; justify-content: center; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; color: #4E5548">
+<span>Venue intelligence</span><span>Vendor networks</span><span>Guest-travel playbooks</span><span>Local permits &amp; crews</span>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 112px 32px">
+<div style="background: #DDE1D6; border-radius: 8px; padding: 64px 56px; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 640px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(32px, 3.6vw, 52px); line-height: 1.08">Can’t decide where?</h2>
+<span style="color: #3A4234">Share your guest count, budget and season. We’ll send three costed destination options within 72 hours.</span>
+</div>
+<a href="Contact.dc.html" style="text-decoration: none; background: #56604A; color: #F6F4EE; padding: 18px 32px; border-radius: 2px; font-weight: 500">Get destination options</a>
+</div>
+</section>
+
+<dc-import name="WhatsAppButton" message="{{waMessage}}" hint-size="0px,0px"></dc-import>
+<dc-import name="Footer" hint-size="100%,640px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5000}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { filter: 'all' };
+}
+renderVals() {
+const all = [
+{ name: 'Udaipur', region: 'Rajasthan', type: 'palace', text: 'The city of lakes, built for weddings.', season: 'Oct–Mar', guests: '800', img: '' },
+{ name: 'Jaipur', region: 'Rajasthan', type: 'palace', text: 'Pink sandstone, elephant arches, royal scale.', season: 'Oct–Mar', guests: '1,200', img: '/_blob/6ca31c696a0c519f12e27d0f02982433' },
+{ name: 'Goa', region: 'Konkan coast', type: 'beach', text: 'Barefoot ceremonies, dance floors in the sand.', season: 'Nov–Feb', guests: '500', img: '' },
+{ name: 'Kerala', region: 'Malabar coast', type: 'beach', text: 'Backwaters, houseboats and monsoon-blessed green.', season: 'Sep–Mar', guests: '300', img: '/_blob/50ee3792317892b61dc1dce1fe13edb4' },
+{ name: 'Bali', region: 'Indonesia', type: 'abroad', text: 'Cliff-top temples meet villas for weddings abroad.', season: 'Apr–Oct', guests: '200', img: '/_blob/391ae66314aa3d37b4ca0afe6c7ab1cf' },
+{ name: 'Phuket', region: 'Thailand', type: 'abroad', text: 'Andaman-blue backdrops with Thai hospitality.', season: 'Nov–Apr', guests: '400', img: '/_blob/1c6f29bcf21269f70a5186b3497a9e93' },
+{ name: 'Tuscany', region: 'Italy', type: 'abroad', text: 'Vineyards, villas and la dolce vita.', season: 'May–Sep', guests: '150', img: '/_blob/0cffdfa2edd287f58bdc1c8dee086bfa' },
+{ name: 'Dubai', region: 'UAE', type: 'abroad', text: 'Skyline ballrooms and desert-gold receptions.', season: 'Nov–Mar', guests: '1,000', img: '/_blob/74f8be434168ed576c8d3d7186b9e4c4' }
+].map((d) => ({ ...d, hasImg: !!d.img, noImg: !d.img }));
+const labels = { palace: 'Rajasthan', beach: 'Coast & backwaters', abroad: 'International' };
+const active = this.state.filter;
+const opts = [['all', 'All'], ['palace', 'Rajasthan palaces'], ['beach', 'Coast & backwaters'], ['abroad', 'International']];
+const filters = opts.map(([key, label]) => ({
+label,
+pressed: key === active ? 'true' : 'false',
+bg: key === active ? '#23271F' : '#ECEAE2',
+fg: key === active ? '#F6F4EE' : '#23271F',
+pick: () => this.setState({ filter: key })
+}));
+const shown = all.filter((d) => active === 'all' || d.type === active).map((d) => ({ ...d, typeLabel: labels[d.type] }));
+const wa = {
+all: "Hi Wedlock! I'm exploring destinations for my wedding. Could you suggest a few options for us?",
+palace: "Hi Wedlock! I'm interested in a palace wedding in Rajasthan (Udaipur or Jaipur). Could you share venues and a budget?",
+beach: "Hi Wedlock! I'm interested in a beach or backwater wedding in Goa or Kerala. Could you share venues and a budget?",
+abroad: "Hi Wedlock! I'm planning a wedding abroad (Bali, Phuket, Tuscany or Dubai). Could you share options and a budget?"
+};
+return { filters, shown, count: shown.length, waMessage: wa[active] };
+}
+}
+</script>
+</body>
+</html>

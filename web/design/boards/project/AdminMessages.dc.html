@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock admin — Messages</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}
+input,button,select,textarea{font:inherit}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 15px; line-height: 1.5; color: #23271F; background: #F6F4EE; min-height: 100vh; display: flex; flex-wrap: wrap">
+<dc-import name="AdminSidebar" active="messages" hint-size="256px,1000px"></dc-import>
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; color: #4E5548">Business · email and WhatsApp to couples and vendors · sample data</span>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 44px; line-height: 1.05">Messages</h1>
+</div>
+<a href="#" style="text-decoration: none; background: #ECEAE2; padding: 12px 16px; border-radius: 2px; font-size: 13px; font-weight: 600">Manage templates</a>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+<section style="flex: 999 1 560px; min-width: 0; background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 28px">New message</h2>
+
+<div role="group" aria-label="Channel" style="display: flex; border: 1px solid #23271F; border-radius: 2px; overflow: hidden; align-self: flex-start">
+<sc-for list="{{channels}}" as="c" hint-placeholder-count="2">
+<button type="button" aria-pressed="{{c.on}}" onClick="{{c.pick}}" style="border: none; background: {{c.bg}}; color: {{c.fg}}; padding: 9px 18px; font-size: 13px; font-weight: 600; cursor: pointer">{{c.name}}</button>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; font-weight: 600">To</span>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; align-items: center; border: 1px solid #DAD7CC; border-radius: 2px; padding: 8px 10px">
+<sc-for list="{{to}}" as="t" hint-placeholder-count="3">
+<span style="background: #ECEAE2; border-radius: 2px; padding: 4px 10px; font-size: 13px">{{t.name}} <span style="color: #4E5548">· {{t.kind}}</span></span>
+</sc-for>
+<input type="text" placeholder="Add a couple, vendor or group (e.g. All decor vendors)" style="flex: 1; min-width: 200px; border: none; padding: 4px; font-size: 14px">
+</div>
+</div>
+
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Template<select style="border: 1px solid #DAD7CC; background: #FFFFFF; border-radius: 2px; padding: 10px; font-size: 14px"><option>Vendor brief — event confirmed</option><option>Enquiry received (couple)</option><option>Proposal ready (couple)</option><option>Payment reminder (couple)</option><option>Final run-of-show (vendors)</option><option>Thank you + review request (couple)</option><option>Blank</option></select></label>
+
+<sc-if value="{{isEmail}}" hint-placeholder-val="true">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Subject<input type="text" value="Wedlock brief: Pooja &amp; Karan, 9 Feb 2027, Patna" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 10px; font-size: 14px"></label>
+</sc-if>
+
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Message<textarea rows="8" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 12px; font-size: 14px; line-height: 1.6; color: #23271F; resize: vertical">Namaste {first_name},
+
+Pooja &amp; Karan's wedding is confirmed for {event_date} at {venue}, Patna.
+Your slot: {call_time}. Load-in from the service gate.
+Site lead on the day: Rahul Ranjan, +91 70615 28402.
+
+Please reply to confirm.
+— Team Wedlock</textarea></label>
+<span style="font-size: 12px; color: #4E5548">Fields in {braces} fill in for each person. Each vendor gets their own copy.</span>
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; border-top: 1px solid #ECEAE2; padding-top: 16px">
+<sc-if value="{{isEmail}}" hint-placeholder-val="true">
+<button type="button" style="border: none; background: #23271F; color: #F6F4EE; border-radius: 2px; padding: 12px 18px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; cursor: pointer">Send 3 emails</button>
+<span style="font-size: 13px; color: #4E5548">Sent from info@wedlock.co.in. Replies come to the shared inbox.</span>
+</sc-if>
+<sc-if value="{{isWa}}" hint-placeholder-val="false">
+<button type="button" style="border: none; background: #1F7A45; color: #FFFFFF; border-radius: 2px; padding: 12px 18px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; cursor: pointer">Open WhatsApp · 1 of 3</button>
+<span style="font-size: 13px; color: #4E5548">Opens each chat with the message typed in. You press send, then click for the next person.</span>
+</sc-if>
+</div>
+</section>
+
+<aside style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 24px">Recent</h2>
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+<sc-for list="{{recent}}" as="r" hint-placeholder-count="6">
+<li style="display: flex; flex-direction: column; gap: 2px; padding: 10px 0; border-top: 1px solid #ECEAE2">
+<span style="display: flex; justify-content: space-between; gap: 8px"><strong style="font-weight: 600; font-size: 14px">{{r.to}}</strong><span style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: {{r.color}}">{{r.channel}}</span></span>
+<span style="font-size: 13px; color: #4E5548">{{r.what}} · {{r.when}} · {{r.status}}</span>
+</li>
+</sc-for>
+</ol>
+</section>
+<section style="background: #ECEAE2; border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #4E5548">
+<strong style="color: #23271F; font-weight: 600">How sending works</strong>
+<span>Email goes out through Resend and is logged on the lead, vendor or event.</span>
+<span>WhatsApp opens your WhatsApp with the message ready. Sending to many people at once needs the WhatsApp Business API (phase 2).</span>
+<span>Couples who did not agree to WhatsApp contact are greyed out.</span>
+</section>
+</aside>
+</div>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1200}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { channel: 'Email' };
+}
+renderVals() {
+const ch = this.state.channel;
+return {
+isEmail: ch === 'Email',
+isWa: ch === 'WhatsApp',
+channels: ['Email', 'WhatsApp'].map((name) => ({ name, on: String(ch === name), bg: ch === name ? '#23271F' : 'transparent', fg: ch === name ? '#F6F4EE' : '#23271F', pick: () => this.setState({ channel: name }) })),
+to: [{ name: 'Phoolwari Decor', kind: 'decor' }, { name: 'Raag Sound & Light', kind: 'sound' }, { name: 'Bihar Caterers', kind: 'catering' }],
+recent: [
+{ to: 'Priya & Rohan', channel: 'WhatsApp', color: '#1F7A45', what: 'Thank you for enquiring', when: 'today 10:02', status: 'opened in WhatsApp' },
+{ to: 'Priya & Rohan', channel: 'Email', color: '#7E6233', what: 'Enquiry received', when: 'today 9:41', status: 'delivered' },
+{ to: 'All Patna decor vendors (6)', channel: 'Email', color: '#7E6233', what: 'Feb 2027 availability', when: 'yesterday', status: '6 delivered, 4 replied' },
+{ to: 'Kavya Mehra', channel: 'Email', color: '#7E6233', what: 'Proposal ready', when: 'Mon', status: 'opened twice' },
+{ to: 'Lens & Light Studio', channel: 'WhatsApp', color: '#1F7A45', what: 'Shot list for Pooja & Karan', when: 'Mon', status: 'opened in WhatsApp' },
+{ to: 'Meera Jha', channel: 'Email', color: '#7E6233', what: 'Gentle follow-up', when: 'Sun', status: 'bounced, check address' }
+]
+};
+}
+}
+</script>
+</body>
+</html>

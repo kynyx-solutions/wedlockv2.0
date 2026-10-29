@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock — Destination weddings</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;family=Tiro+Devanagari+Hindi&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}a:hover{color:#56604A}
+details summary{cursor:pointer}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 17px; line-height: 1.6; color: #23271F; background: #F6F4EE">
+<dc-import name="Header" active="services" hint-size="100%,124px"></dc-import>
+
+<!-- HERO -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 48px 32px 96px; display: flex; flex-direction: column; gap: 32px">
+<nav aria-label="Breadcrumb" style="font-size: 14px; color: #4E5548"><a href="Home.dc.html" style="color: #4E5548">Home</a> / <a href="Services.dc.html" style="color: #4E5548">Services</a> / Destination weddings</nav>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr)); gap: 48px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 24px">
+<span style="align-self: flex-start; color: #7E6233; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600">Specialist service 01</span>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(46px, 5.6vw, 80px); line-height: 1.02; letter-spacing: -0.025em">Destination weddings, <em>without the distance.</em></h1>
+<p style="margin: 0; font-size: 19px; color: #4E5548">Somewhere unforgettable is already waiting. Our destination desk has scouted 40+ cities in 14 countries — Rajasthan’s palaces, Goa’s beaches, Kerala’s backwaters, Bali, Phuket, Tuscany and Dubai — and moves your whole wedding, your guests and your traditions with you.</p>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+<div style="background: #ECEAE2; border-radius: 8px; padding: 18px"><div style="font-size: 13px; color: #4E5548">Guests</div><div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px">40 – 1,200</div></div>
+<div style="background: #ECEAE2; border-radius: 8px; padding: 18px"><div style="font-size: 13px; color: #4E5548">Book ahead</div><div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px">9–14 months</div></div>
+<div style="background: #ECEAE2; border-radius: 8px; padding: 18px"><div style="font-size: 13px; color: #4E5548">Planning fee</div><div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px">[₹ PRICE]+</div></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="Contact.dc.html" style="text-decoration: none; background: #56604A; color: #F6F4EE; padding: 17px 30px; border-radius: 2px; font-weight: 500">Plan my destination wedding</a>
+<a href="#" style="text-decoration: none; background: #ECEAE2; padding: 17px 30px; border-radius: 2px; font-weight: 500">Download brochure (PDF)</a>
+</div>
+</div>
+<img src="/_blob/10d3812835f1c73c642b2ea427fdb86a" alt="A wedding walkway under crystal globes and cascading greenery" style="display: block; width: 100%; height: 600px; object-fit: cover; border-radius: 8px">
+</div>
+</section>
+
+<!-- INCLUDED -->
+<section style="background: #ECEAE2">
+<div style="max-width: 1280px; margin: 0 auto; padding: 112px 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(36px, 4vw, 54px); line-height: 1.08">What’s included</h2>
+<p style="margin: 0; color: #4E5548">Everything in Full Planning, plus the logistics that only a destination wedding needs.</p>
+</div>
+<ul style="grid-column: span 2; margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 12px; min-width: 0">
+<sc-for list="{{included}}" as="item" hint-placeholder-count="12">
+<li style="background: #F6F4EE; border-radius: 8px; padding: 18px 20px; display: flex; gap: 12px; align-items: flex-start"><span aria-hidden="true" style="flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: #56604A; color: #F6F4EE; display: flex; align-items: center; justify-content: center; font-size: 13px">✓</span><span style="font-size: 16px">{{item}}</span></li>
+</sc-for>
+</ul>
+</div>
+</section>
+
+<!-- DESTINATIONS -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: flex-end">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(36px, 4vw, 54px); line-height: 1.08">Popular <em>destinations</em></h2>
+<a href="Destinations.dc.html" style="text-decoration: none; background: #ECEAE2; padding: 15px 26px; border-radius: 2px; font-weight: 500">All destinations →</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 16px">
+<sc-for list="{{places}}" as="item" hint-placeholder-count="4">
+<a href="Destinations.dc.html" style="text-decoration: none; display: flex; flex-direction: column; gap: 12px"><img src="{{item.img}}" alt="{{item.name}}" style="display: block; width: 100%; height: 300px; object-fit: cover; border-radius: 10px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px">{{item.name}}</span><span style="font-size: 14px; color: #4E5548">{{item.note}}</span></a>
+</sc-for>
+</div>
+</section>
+
+<!-- ITINERARY -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 112px">
+<div style="background: #23271F; color: #F6F4EE; border-radius: 8px; padding: 72px 56px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.1">A sample three-day itinerary</h2>
+<span style="color: #BFC5B6">Every itinerary is built around your muhurat</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px">
+<sc-for list="{{days}}" as="day" hint-placeholder-count="3">
+<div style="background: #2E3328; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px">{{day.title}}</span>
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px">
+<sc-for list="{{day.items}}" as="ev" hint-placeholder-count="3">
+<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 12px; border-top: 1px solid #4E5548; padding-top: 12px"><span style="font-size: 14px; color: #BFC5B6">{{ev.time}}</span><span style="font-size: 16px">{{ev.what}}</span></li>
+</sc-for>
+</ol>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- PROCESS -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 112px; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(36px, 4vw, 54px); line-height: 1.08">How a destination wedding comes together</h2>
+<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+<sc-for list="{{process}}" as="item" hint-placeholder-count="5">
+<li style="background: #ECEAE2; border-radius: 10px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; color: #7E6233; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">{{item.when}}</span>
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px">{{item.title}}</span>
+<span style="font-size: 15px; color: #4E5548">{{item.text}}</span>
+</li>
+</sc-for>
+</ol>
+</section>
+
+<!-- STORY + QUOTE -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 112px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 20px">
+<a href="WeddingStory.dc.html" style="text-decoration: none; background: #DDE1D6; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column"><div style="height: 320px; background: #B5BBA9; display: flex; align-items: flex-end; padding: 18px; box-sizing: border-box"><span style="font-size: 13px; color: #23271F">Photo from the Udaipur wedding — to come</span></div><div style="padding: 28px 32px 32px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 13px; color: #3A4234; font-weight: 500">Case study</span><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px">Aisha &amp; Arjun — three days on the lake of palaces</span><span style="font-weight: 500">Read the story →</span></div></a>
+<figure style="margin: 0; background: #ECEAE2; border-radius: 4px; padding: 48px; display: flex; flex-direction: column; justify-content: center; gap: 24px">
+<blockquote style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 30px; line-height: 1.35; font-style: italic">“We never worried once.”</blockquote>
+<figcaption style="font-size: 15px"><strong style="font-weight: 500">Aisha &amp; Arjun Malhotra</strong><br><span style="color: #4E5548">Destination wedding · Udaipur · 320 guests</span></figcaption>
+</figure>
+</section>
+
+<!-- FAQ -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 112px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 48px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(36px, 4vw, 54px); line-height: 1.08">Destination wedding questions</h2>
+<div style="grid-column: span 2; display: flex; flex-direction: column; gap: 10px; min-width: 0">
+<details open="" style="background: #ECEAE2; border-radius: 8px; padding: 22px 26px"><summary style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 21px">Is a destination wedding more expensive?</summary><p style="margin: 10px 0 0; color: #4E5548; font-size: 16px">Often not. A smaller guest list and venue packages can offset travel. We share a side-by-side budget for home city vs destination in your first proposal.</p></details>
+<details style="background: #ECEAE2; border-radius: 8px; padding: 22px 26px"><summary style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 21px">Do you handle guest flights and rooms?</summary></details>
+<details style="background: #ECEAE2; border-radius: 8px; padding: 22px 26px"><summary style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 21px">Can our family pandit travel with us?</summary></details>
+<details style="background: #ECEAE2; border-radius: 8px; padding: 22px 26px"><summary style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 21px">What about weather and backup venues?</summary></details>
+<details style="background: #ECEAE2; border-radius: 8px; padding: 22px 26px"><summary style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 21px">How do international weddings work for NRI families?</summary></details>
+</div>
+</section>
+
+<!-- CTA -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 112px">
+<div style="background: #56604A; color: #F6F4EE; border-radius: 8px; padding: 64px 56px; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 640px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(32px, 3.6vw, 52px); line-height: 1.08">Where will you say <em>yes?</em></h2>
+<span style="color: #DCE0D4">Get three destination ideas and a sample budget — free.</span>
+</div>
+<a href="Contact.dc.html" style="text-decoration: none; background: #F6F4EE; color: #23271F; padding: 18px 32px; border-radius: 2px; font-weight: 500">Get my destination ideas</a>
+</div>
+</section>
+
+<dc-import name="WhatsAppButton" message="Hi Wedlock! I'm interested in a destination wedding. Could you share destination options and a sample budget?" hint-size="0px,0px"></dc-import>
+<dc-import name="Footer" hint-size="100%,640px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6400}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+included: [
+'Destination shortlist with costed comparisons',
+'Recce visits with you and your family',
+'Venue contracts and room-block negotiation',
+'Local permits, licences and police permissions',
+'Guest flights, trains and charter coordination',
+'Airport and station pickups for every guest',
+'Room allocation and check-in desk',
+'Welcome hampers and printed itineraries',
+'Local décor, catering and artist sourcing',
+'Travel and stay for your family priest',
+'Weather backups for every outdoor event',
+'Day-after checkout and vendor settlement'
+],
+places: [
+{ name: 'Jaipur', note: 'Rajasthan · Oct–Mar · 200–1,200 guests', img: '/_blob/6ca31c696a0c519f12e27d0f02982433' },
+{ name: 'Kerala', note: 'Backwaters · Sep–Mar · 60–300 guests', img: '/_blob/50ee3792317892b61dc1dce1fe13edb4' },
+{ name: 'Bali', note: 'Indonesia · Apr–Oct · 40–200 guests', img: '/_blob/391ae66314aa3d37b4ca0afe6c7ab1cf' },
+{ name: 'Dubai', note: 'UAE · Nov–Mar · 100–1,000 guests', img: '/_blob/74f8be434168ed576c8d3d7186b9e4c4' }
+],
+days: [
+{ title: 'Day 1 · Arrive', items: [ { time: '11:00', what: 'Guest arrivals & welcome hampers' }, { time: '14:00', what: 'Welcome lunch by the lake' }, { time: '17:00', what: 'Mehendi in the courtyard' } ] },
+{ title: 'Day 2 · Celebrate', items: [ { time: '10:00', what: 'Haldi on the lawns' }, { time: '13:00', what: 'Pool-side brunch' }, { time: '20:00', what: 'Sangeet night' } ] },
+{ title: 'Day 3 · Wed', items: [ { time: '17:00', what: 'Baraat' }, { time: '19:30', what: 'Pheras at the mandap' }, { time: '21:30', what: 'Reception dinner' } ] }
+],
+process: [
+{ when: '12–14 months', title: 'Destination brief', text: 'Budget, guest count and three costed options.' },
+{ when: '10–12 months', title: 'Recce & booking', text: 'Visit shortlisted venues together, lock dates.' },
+{ when: '6–9 months', title: 'Design & vendors', text: 'Local and travelling vendors, contracts signed.' },
+{ when: '2–4 months', title: 'Guest logistics', text: 'Travel, rooms, invitations and RSVPs.' },
+{ when: 'Wedding week', title: 'On-site team', text: 'Our crew arrives 3 days early and runs everything.' }
+]
+};
+}
+}
+</script>
+</body>
+</html>

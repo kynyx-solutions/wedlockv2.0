@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock — Weddings</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;family=Tiro+Devanagari+Hindi&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}a:hover{color:#56604A}
+button,select{font:inherit}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 17px; line-height: 1.6; color: #23271F; background: #F6F4EE">
+<dc-import name="Header" active="weddings" hint-size="100%,124px"></dc-import>
+
+<!-- HERO -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 48px 32px 48px; display: flex; flex-direction: column; gap: 28px">
+<nav aria-label="Breadcrumb" style="font-size: 14px; color: #4E5548"><a href="Home.dc.html" style="color: #4E5548">Home</a> / Weddings</nav>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 40px; align-items: end">
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(46px, 6vw, 84px); line-height: 1.02; letter-spacing: -0.025em">650+ celebrations. <em>Here are a few.</em></h1>
+<p style="margin: 0; font-size: 20px; color: #4E5548">Proof, not promises — celebrations we have actually produced. Every photograph here is from a Wedlock wedding.</p>
+</div>
+</section>
+
+<!-- FILTERS + GRID -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 96px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center; border-top: 1px solid #DAD7CC; border-bottom: 1px solid #DAD7CC; padding: 16px 0">
+<div role="group" aria-label="Filter weddings" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{filters}}" as="f" hint-placeholder-count="6">
+<button type="button" onClick="{{f.pick}}" aria-pressed="{{f.pressed}}" style="border: none; border-radius: 2px; padding: 11px 18px; font-size: 15px; cursor: pointer; background: {{f.bg}}; color: {{f.fg}}">{{f.label}}</button>
+</sc-for>
+</div>
+<label style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #4E5548">Sort<select style="border: none; background: #ECEAE2; border-radius: 2px; padding: 11px 16px; font-size: 15px; color: #23271F"><option>Newest first</option><option>Largest first</option><option>By destination</option></select></label>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 24px">
+<sc-for list="{{shown}}" as="w" hint-placeholder-count="9">
+<a href="WeddingStory.dc.html" style="text-decoration: none; display: flex; flex-direction: column; gap: 12px">
+<div style="height: {{w.h}}; border-radius: 4px; background: #C9CEC0; position: relative; overflow: hidden"><img src="{{w.img}}" alt="{{w.alt}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: {{w.pos}}"><span style="position: absolute; left: 16px; top: 16px; background: #F6F4EE; border-radius: 2px; padding: 6px 12px; font-size: 13px; font-weight: 500">{{w.tag}}</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px">{{w.couple}}</span><span style="font-size: 14px; color: #4E5548">{{w.year}}</span></div>
+<span style="font-size: 15px; color: #4E5548">{{w.meta}}</span>
+</a>
+</sc-for>
+</div>
+<button type="button" style="align-self: center; border: 1px solid #B5BBA9; background: transparent; color: #23271F; border-radius: 2px; padding: 16px 32px; font-size: 16px; font-weight: 500; cursor: pointer">Load more weddings</button>
+</section>
+
+<!-- FILMS -->
+<section style="background: #23271F; color: #F6F4EE">
+<div style="max-width: 1280px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(36px, 4vw, 58px); line-height: 1.08">Wedding <em>films</em></h2>
+<a href="https://www.youtube.com/playlist?list=PLl563t1NI8UZgd4A95Q_P9i77d7NpbIM8" style="color: #F6F4EE; font-weight: 500; padding: 10px 0">Watch on YouTube →</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 20px">
+<sc-for list="{{films}}" as="f" hint-placeholder-count="3">
+<a href="https://www.youtube.com/playlist?list=PLl563t1NI8UZgd4A95Q_P9i77d7NpbIM8" style="text-decoration: none; color: #F6F4EE; display: flex; flex-direction: column; gap: 12px">
+<div style="height: 240px; border-radius: 10px; background: #4E5548; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center"><img src="{{f.img}}" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: {{f.pos}}"><span aria-hidden="true" style="position: relative; width: 64px; height: 64px; border-radius: 50%; background: #F6F4EE; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="#23271F"><path d="M8 5v14l11-7z"></path></svg></span></div>
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px">{{f.title}}</span>
+<span style="font-size: 14px; color: #BFC5B6">{{f.meta}}</span>
+</a>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- REVIEWS WALL -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(36px, 4vw, 58px); line-height: 1.08">What families say</h2>
+<div style="display: flex; gap: 12px; font-size: 15px"><a href="https://instagram.com/wedlockweddings/" style="text-decoration: none; background: #ECEAE2; border-radius: 2px; padding: 10px 16px">@wedlockweddings on Instagram</a><a href="https://facebook.com/WedlockWeddingPlanner/" style="text-decoration: none; background: #ECEAE2; border-radius: 2px; padding: 10px 16px">Facebook reviews</a></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 16px">
+<sc-for list="{{reviews}}" as="r" hint-placeholder-count="6">
+<figure style="margin: 0; background: #ECEAE2; border-radius: 10px; padding: 26px; display: flex; flex-direction: column; gap: 12px">
+<blockquote style="margin: 0; font-size: 16px">“{{r.q}}”</blockquote>
+<figcaption style="font-size: 14px"><strong style="font-weight: 500">{{r.who}}</strong> · <span style="color: #4E5548">{{r.where}}</span></figcaption>
+</figure>
+</sc-for>
+</div>
+</section>
+
+<!-- CTA -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 112px">
+<div style="background: #56604A; color: #F6F4EE; border-radius: 8px; padding: 64px 56px; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; align-items: center">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(32px, 3.6vw, 52px); line-height: 1.08; max-width: 14em">Your story could be next.</h2>
+<a href="Contact.dc.html" style="text-decoration: none; background: #F6F4EE; color: #23271F; padding: 18px 32px; border-radius: 2px; font-weight: 500">Start planning</a>
+</div>
+</section>
+
+<dc-import name="WhatsAppButton" message="{{waMessage}}" hint-size="0px,0px"></dc-import>
+<dc-import name="Footer" hint-size="100%,640px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5200}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { filter: 'all' };
+}
+renderVals() {
+const all = [
+{ couple: 'Ankita & Anunay', year: 'May 2023', meta: 'Reception · fairy-light walkway & chevron floor', type: 'sangeet', tag: 'Reception', img: '/_blob/3e241a920e85b2247124e3fbf4c8e395', alt: 'Ankita and Anunay at their reception', pos: '62% 30%', h: '420px' },
+{ couple: 'Srestha & Vishal', year: 'Feb 2023', meta: 'Wedding · white bloom stage & S·V monogram', type: 'wedding', tag: 'Wedding', img: '/_blob/5eb4ec150d2dafaecd8003c51af84546', alt: 'Srestha and Vishal’s floral wedding stage', pos: '50% 50%', h: '340px' },
+{ couple: '[Couple] & [Couple]', year: '[Year]', meta: 'Haldi · marigold, mogra & roses', type: 'haldi', tag: 'Haldi', img: '/_blob/bd8513b1884ab74ca72c5052dbe29977', alt: 'A couple in yellow at their haldi', pos: '50% 25%', h: '420px' },
+{ couple: 'The bride', year: '[Year]', meta: 'Wedding day · under the phulkari canopy', type: 'wedding', tag: 'Wedding', img: '/_blob/1d88ccad4a1b31d661ccd9197b4f3222', alt: 'A bride beneath a red canopy of golden latkans', pos: '50% 20%', h: '340px' },
+{ couple: 'Ankita & Anunay', year: '2023', meta: 'Sangeet · the whole family on the floor', type: 'sangeet', tag: 'Sangeet', img: '/_blob/437dd7a9c2e2c4956ff16411ffb2eb10', alt: 'Guests dancing at a sangeet', pos: '50% 40%', h: '420px' },
+{ couple: '[Couple] & [Couple]', year: '[Year]', meta: 'Mehendi · marigold & teal canopy', type: 'haldi', tag: 'Mehendi', img: '/_blob/1280090c4a26b69f123b0972f2191059', alt: 'A couple at their mehendi', pos: '50% 40%', h: '340px' },
+{ couple: 'Floral mandap', year: '[Year]', meta: 'Décor · red gerberas, crystal lights', type: 'decor', tag: 'Décor', img: '/_blob/9c41f59830e2a3b308a03a5645044282', alt: 'A floral mandap with crystal lights', pos: '50% 50%', h: '420px' },
+{ couple: 'Crystal walkway', year: '[Year]', meta: 'Décor · cascading greens & crystal globes', type: 'decor', tag: 'Décor', img: '/_blob/10d3812835f1c73c642b2ea427fdb86a', alt: 'A walkway under crystal globes', pos: '50% 40%', h: '340px' },
+{ couple: 'Cocktail night', year: '[Year]', meta: 'Décor · living wall & “Better Together” neon', type: 'decor', tag: 'Décor', img: '/_blob/5b18d6ed66f138e70d661d827726df2b', alt: 'A green wall with a neon sign', pos: '50% 50%', h: '420px' }
+];
+const active = this.state.filter;
+const opts = [['all', 'All'], ['wedding', 'Weddings'], ['haldi', 'Haldi & Mehendi'], ['sangeet', 'Sangeet & Reception'], ['decor', 'Décor']];
+const filters = opts.map(([key, label]) => ({
+label,
+pressed: key === active ? 'true' : 'false',
+bg: key === active ? '#23271F' : '#ECEAE2',
+fg: key === active ? '#F6F4EE' : '#23271F',
+pick: () => this.setState({ filter: key })
+}));
+const wa = {
+all: "Hi Wedlock! I loved the weddings on your website and would like to plan ours with you.",
+wedding: "Hi Wedlock! I loved your wedding-day work and would like to plan our wedding with you.",
+haldi: "Hi Wedlock! I loved your haldi and mehendi setups and would like something similar for us.",
+sangeet: "Hi Wedlock! I loved your sangeet and reception work and would like something similar for us.",
+decor: "Hi Wedlock! I loved your décor work. Could you share ideas for our wedding?"
+};
+return {
+waMessage: wa[active],
+filters,
+shown: all.filter((w) => active === 'all' || w.type === active),
+films: [
+{ title: 'The bride, under her veil', meta: 'Wedlock wedding films · YouTube', img: '/_blob/721bfd564c754d242f5b4561c92b6655', pos: '62% 30%' },
+{ title: 'Ankita & Anunay — reception', meta: 'Wedlock wedding films · YouTube', img: '/_blob/f89d2e44015c11f50397469b072a159e', pos: '40% 20%' },
+{ title: 'Haldi morning', meta: 'Wedlock wedding films · YouTube', img: '/_blob/766a0720082acdc7c2235a92ddd0dc94', pos: '50% 30%' }
+],
+reviews: [
+{ q: 'We never worried once.', who: 'Aisha & Arjun Malhotra', where: 'Udaipur' },
+{ q: '[Review from Ankita & Anunay.]', who: 'Ankita & Anunay', where: 'May 2023' },
+{ q: '[Review from Srestha & Vishal.]', who: 'Srestha & Vishal', where: 'Feb 2023' },
+{ q: '[Review about guest hospitality.]', who: '[Name]', where: 'Patna · [Year]' },
+{ q: '[Review about décor.]', who: '[Name]', where: 'Ranchi · [Year]' },
+{ q: '[Review about the wedding-day team.]', who: '[Name]', where: 'New Delhi · [Year]' }
+]
+};
+}
+}
+</script>
+</body>
+</html>

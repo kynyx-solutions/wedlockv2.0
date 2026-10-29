@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock — Wedding planner in Patna</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;family=Tiro+Devanagari+Hindi&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}a:hover{color:#56604A}
+details summary{cursor:pointer}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 17px; line-height: 1.6; color: #23271F; background: #F6F4EE">
+<dc-import name="Header" active="none" hint-size="100%,124px"></dc-import>
+
+<!-- HERO -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 48px 32px 80px; display: flex; flex-direction: column; gap: 32px">
+<nav aria-label="Breadcrumb" style="font-size: 14px; color: #4E5548"><a href="Home.dc.html" style="color: #4E5548">Home</a> / Wedding planner in Patna</nav>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr)); gap: 56px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; align-items: center; gap: 14px"><span lang="hi" style="font-family: 'Tiro Devanagari Hindi', serif; font-size: 20px; color: #7E6233">पटना</span><span aria-hidden="true" style="width: 40px; height: 1px; background: #B8975F"></span><span style="color: #7E6233; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600">Our headquarters · since 2014</span></div>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(48px, 6vw, 88px); line-height: 1; letter-spacing: -0.02em">Wedding planners in Patna, <em>since our very first wedding.</em></h1>
+<p style="margin: 0; font-size: 19px; color: #4E5548; max-width: 32em">Wedlock was born in Patna on the lineage of Eventoss. Our home-city team knows the venues, the caterers, the décor houses and the families — and has planned Patna weddings from intimate pheras to grand receptions.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="Contact.dc.html" style="text-decoration: none; background: #23271F; color: #F6F4EE; padding: 18px 30px; border-radius: 2px; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600">Visit our Patna studio</a>
+<a href="tel:+917061528402" style="text-decoration: none; border: 1px solid #23271F; padding: 17px 30px; border-radius: 2px; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600">Call +91 70615 28402</a>
+</div>
+</div>
+<div style="position: relative; min-height: 560px">
+<img src="/_blob/9c41f59830e2a3b308a03a5645044282" alt="A floral mandap of red gerberas with crystal lights" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 8px">
+<div style="position: absolute; left: -28px; bottom: 40px; background: #F6F4EE; border-radius: 8px; padding: 18px 22px; box-shadow: 0 18px 44px rgba(35,39,31,0.14)">
+<span style="display: block; font-size: 13px; color: #4E5548">Patna studio</span>
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px">208-A, Kaushalya Estate</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- WHY PATNA -->
+<section style="background: #ECEAE2">
+<div style="max-width: 1280px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 48px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(36px, 4vw, 58px); line-height: 1.08">Why Patna families <em>choose Wedlock</em></h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr)); gap: 16px">
+<sc-for list="{{why}}" as="w" hint-placeholder-count="4">
+<article style="background: #F6F4EE; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 34px; font-weight: 300; color: #7E6233; line-height: 1">{{w.n}}</span>
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 24px">{{w.title}}</h3>
+<p style="margin: 0; color: #4E5548; font-size: 15px">{{w.text}}</p>
+</article>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- VENUES -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 112px 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="align-self: flex-start; color: #7E6233; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600">Venues we know</span>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.1">Banquets, hotels and lawns across Patna</h2>
+<p style="margin: 0; color: #4E5548">We shortlist venues by guest count, season and the rituals you need — and visit them with you.</p>
+</div>
+<div style="grid-column: span 2; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; border-top: 1px solid #23271F; min-width: 0">
+<sc-for list="{{venues}}" as="v" hint-placeholder-count="6">
+<div style="display: flex; justify-content: space-between; gap: 12px; padding: 18px 0; border-bottom: 1px solid #DAD7CC"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px">{{v.name}}</span><span style="font-size: 14px; color: #4E5548; text-align: right">{{v.type}}</span></div>
+</sc-for>
+</div>
+</section>
+
+<!-- WEDDINGS IN PATNA -->
+<section style="background: #DDE1D6">
+<div style="max-width: 1280px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: flex-end">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(36px, 4vw, 58px); line-height: 1.08">Weddings we planned <em>in Patna</em></h2>
+<a href="Portfolio.dc.html" style="text-decoration: none; background: #F6F4EE; padding: 15px 26px; border-radius: 2px; font-weight: 500">All weddings →</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 20px">
+<a href="WeddingStory.dc.html" style="text-decoration: none; background: #F6F4EE; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column"><img src="/_blob/3e241a920e85b2247124e3fbf4c8e395" alt="Ankita and Anunay at their reception" style="display: block; width: 100%; height: 300px; object-fit: cover; object-position: 62% 30%"><div style="padding: 22px 26px 26px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; color: #4E5548">Reception · 20 May 2023</span><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px">Ankita &amp; Anunay</span></div></a>
+<a href="WeddingStory.dc.html" style="text-decoration: none; background: #F6F4EE; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column"><img src="/_blob/5eb4ec150d2dafaecd8003c51af84546" alt="Srestha and Vishal’s floral stage" style="display: block; width: 100%; height: 300px; object-fit: cover"><div style="padding: 22px 26px 26px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; color: #4E5548">Wedding · Feb 2023</span><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px">Srestha &amp; Vishal</span></div></a>
+<a href="WeddingStory.dc.html" style="text-decoration: none; background: #F6F4EE; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column"><img src="/_blob/bd8513b1884ab74ca72c5052dbe29977" alt="A couple at their haldi" style="display: block; width: 100%; height: 300px; object-fit: cover; object-position: 50% 25%"><div style="padding: 22px 26px 26px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; color: #4E5548">Haldi · [Year]</span><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px">[Couple] &amp; [Couple]</span></div></a>
+</div>
+<span style="font-size: 13px; color: #3A4234">Stories appear here when their city is set to Patna in the admin panel. [Confirm the city of each featured wedding.]</span>
+</div>
+</section>
+
+<!-- OFFICE + FAQ -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 112px 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.1">Visit the Patna studio</h2>
+<div style="min-height: 280px; border-radius: 8px; background: #C9CEC0; display: flex; align-items: flex-end; padding: 16px; box-sizing: border-box"><span style="font-size: 13px; color: #23271F">Map · 208-A, Kaushalya Estate, Dak Bunglow Road, Patna</span></div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; font-size: 15px">
+<div><div style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #7E6233; font-weight: 600">Address</div>208-A, Kaushalya Estate, Dak Bunglow Road, Patna</div>
+<div><div style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #7E6233; font-weight: 600">Hours</div>Mon–Sat, 10am–8pm · by appointment</div>
+<div><div style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #7E6233; font-weight: 600">Phone</div><a href="tel:+917061528402">+91 70615 28402</a></div>
+<div><div style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #7E6233; font-weight: 600">Email</div><a href="mailto:info@wedlock.co.in">info@wedlock.co.in</a></div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0 0 10px; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.1">Patna wedding questions</h2>
+<details open="" style="background: #ECEAE2; border-radius: 8px; padding: 20px 24px"><summary style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 21px">How early should we book for the Patna wedding season?</summary><p style="margin: 10px 0 0; color: #4E5548; font-size: 16px">Popular dates fill early — share your date as soon as you have a muhurat, and we will check venue and team availability the same day.</p></details>
+<details style="background: #ECEAE2; border-radius: 8px; padding: 20px 24px"><summary style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 21px">Can you host guests travelling in from other cities?</summary></details>
+<details style="background: #ECEAE2; border-radius: 8px; padding: 20px 24px"><summary style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 21px">Do you work with our family’s caterer or décor house?</summary></details>
+<details style="background: #ECEAE2; border-radius: 8px; padding: 20px 24px"><summary style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 21px">Do you also plan weddings outside Patna?</summary></details>
+</div>
+</section>
+
+<!-- CTA -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 112px">
+<div style="background: #56604A; color: #F6F4EE; border-radius: 16px; padding: 64px 56px; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 640px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(32px, 3.6vw, 52px); line-height: 1.08">Planning a wedding in Patna?</h2>
+<span style="color: #DCE0D4">Book your first meeting with our Patna team — free.</span>
+</div>
+<a href="Contact.dc.html" style="text-decoration: none; background: #F6F4EE; color: #23271F; padding: 18px 32px; border-radius: 2px; font-weight: 500">Book a free consultation</a>
+</div>
+</section>
+
+<dc-import name="WhatsAppButton" message="Hi Wedlock! I'm planning my wedding in Patna and would love a free consultation." hint-size="0px,0px"></dc-import>
+<dc-import name="Footer" hint-size="100%,640px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6000}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+why: [
+{ n: '01', title: 'Our home city', text: 'Wedlock began here in 2014. Our largest team and studio are in Patna.' },
+{ n: '02', title: 'Local vendor network', text: 'Caterers, décor houses, artists and photographers we have worked with for years.' },
+{ n: '03', title: 'Guests from everywhere', text: 'Travel, rooms and pickups for families arriving from across Bihar, India and abroad.' },
+{ n: '04', title: 'Eventoss production', text: 'Stage, light and sound from the region’s leading events agency.' }
+],
+venues: [
+{ name: '[Venue name]', type: 'Banquet · up to [000] guests' },
+{ name: '[Venue name]', type: 'Hotel ballroom · [000]' },
+{ name: '[Venue name]', type: 'Lawn · [000]' },
+{ name: '[Venue name]', type: 'Banquet · [000]' },
+{ name: '[Venue name]', type: 'Heritage property · [000]' },
+{ name: '[Venue name]', type: 'Resort · [000]' }
+]
+};
+}
+}
+</script>
+</body>
+</html>

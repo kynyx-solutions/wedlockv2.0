@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedlock admin — Couple story editor</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Manrope:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F6F4EE}
+a{color:#23271F}
+input,button,select,textarea{font:inherit}
+</style>
+</helmet>
+<div style="font-family: 'Manrope', system-ui, sans-serif; font-size: 15px; line-height: 1.5; color: #23271F; background: #F6F4EE; min-height: 100vh; display: flex; flex-wrap: wrap">
+<dc-import name="AdminSidebar" active="stories" hint-size="256px,1000px"></dc-import>
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<a href="#" style="font-size: 13px; color: #4E5548; text-decoration: none">← All couple stories (31)</a>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 44px; line-height: 1.05">Ankita &amp; Anunay</h1>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<span style="font-size: 13px; color: #4E5548">Published · last edited yesterday</span>
+<a href="WeddingStory.dc.html" style="text-decoration: none; background: #ECEAE2; padding: 11px 16px; border-radius: 2px; font-size: 13px; font-weight: 600">View on site</a>
+<a href="#" style="text-decoration: none; background: #23271F; color: #F6F4EE; padding: 11px 18px; border-radius: 2px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">Save changes</a>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 22px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px 20px">
+<sc-for list="{{fields}}" as="f" hint-placeholder-count="6">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">{{f.k}}<input type="text" value="{{f.v}}" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 10px; font-size: 14px; font-weight: 400"></label>
+</sc-for>
+<label style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Their story<textarea rows="6" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 12px; font-size: 14px; line-height: 1.6; font-weight: 400; color: #23271F; resize: vertical">[Story text from the couple and their planner. Two or three short paragraphs: how they met, what they wanted the wedding to feel like, one moment the family still talks about.]</textarea></label>
+<label style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Pull quote<input type="text" value="[A line from the couple, in their words]" style="border: 1px solid #DAD7CC; border-radius: 2px; padding: 10px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px; font-style: italic; font-weight: 400"></label>
+</section>
+
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap"><h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 26px">Photos</h2><a href="AdminMedia.dc.html" style="font-size: 13px">+ Add from Media library</a></div>
+<span style="font-size: 13px; color: #4E5548">Drag to reorder. The first photo is the cover. Star up to 6 for the Weddings grid.</span>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px">
+<sc-for list="{{photos}}" as="p" hint-placeholder-count="6">
+<figure style="margin: 0; position: relative"><img src="{{p.src}}" alt="{{p.alt}}" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; display: block"><span style="position: absolute; left: 6px; top: 6px; background: #23271F; color: #F6F4EE; font-size: 11px; padding: 2px 8px; border-radius: 2px">{{p.tag}}</span></figure>
+</sc-for>
+</div>
+</section>
+
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 8px">
+<h2 style="margin: 0 0 4px; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 26px">Credits</h2>
+<sc-for list="{{credits}}" as="c" hint-placeholder-count="4">
+<div style="display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px solid #ECEAE2; font-size: 14px"><span style="color: #4E5548">{{c.role}}</span><span>{{c.name}}</span></div>
+</sc-for>
+<span style="font-size: 12px; color: #4E5548">Picked from Vendors, so names stay consistent across stories.</span>
+</section>
+</div>
+
+<aside style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+<section style="background: #FFFFFF; border: 1px solid #DAD7CC; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 12px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Status<select style="border: 1px solid #DAD7CC; background: #FFFFFF; border-radius: 2px; padding: 10px; font-size: 14px"><option>Published</option><option>Draft</option><option>Hidden</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Show on<span style="display: flex; flex-direction: column; gap: 6px; font-weight: 400"><span><input type="checkbox" checked> Weddings page</span><span><input type="checkbox" checked> Home · featured</span><span><input type="checkbox"> Patna city page</span></span></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Linked event<select style="border: 1px solid #DAD7CC; background: #FFFFFF; border-radius: 2px; padding: 10px; font-size: 14px"><option>None (past wedding)</option><option>Pooja &amp; Karan · Feb 2027</option></select></label>
+</section>
+<section style="background: #ECEAE2; border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #4E5548">
+<label style="display: flex; gap: 8px; align-items: flex-start; color: #23271F"><input type="checkbox" checked style="margin-top: 3px"><span>The couple agreed in writing to show these photos and names. <a href="#">Consent note</a></span></label>
+<span>A story cannot be published without this.</span>
+</section>
+</aside>
+</div>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1600}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+fields: [
+{ k: 'Couple names', v: 'Ankita & Anunay' }, { k: 'Wedding date', v: '[date]' }, { k: 'City', v: 'Patna' },
+{ k: 'Venue', v: '[venue]' }, { k: 'Guests', v: '[number]' }, { k: 'Web address', v: 'ankita-anunay' }
+],
+photos: [
+['3e241a920e85b2247124e3fbf4c8e395', 'Ankita and Anunay at their reception', 'Cover'],
+['63453a624848275dc5b41b881fa4e3e7', 'Ankita and Anunay’s welcome board', '★'],
+['bd8513b1884ab74ca72c5052dbe29977', 'A couple at their haldi', '★'],
+['437dd7a9c2e2c4956ff16411ffb2eb10', 'Guests dancing at a sangeet', '★'],
+['9c41f59830e2a3b308a03a5645044282', 'A floral mandap of red gerberas with crystal lights', ''],
+['f89d2e44015c11f50397469b072a159e', 'A couple under fairy lights in black and white', '']
+].map(([id, alt, tag]) => ({ src: '/_blob/' + id, alt, tag })),
+credits: [{ role: 'Planning & design', name: 'Wedlock' }, { role: 'Decor', name: 'Phoolwari Decor' }, { role: 'Photography', name: 'Lens & Light Studio' }, { role: 'Mehendi', name: 'Mehendi by Nazia' }]
+};
+}
+}
+</script>
+</body>
+</html>
