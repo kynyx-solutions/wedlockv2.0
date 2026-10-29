@@ -16,7 +16,7 @@ const WA_MESSAGE = "Hi Wedlock! I was reading your Journal and have a few questi
 
 export default function Journal() {
   const featured = (
-    <Link href={postHref(FEATURED.title)} className="grid overflow-hidden rounded-lg bg-stone no-underline hover:text-ink md:grid-cols-2">
+    <Link href={postHref(FEATURED.title)} className="lift zoom grid overflow-hidden rounded-lg bg-stone no-underline hover:text-ink md:grid-cols-2">
       <Picture slug="w-prewedding-sunset" alt="A couple at the water’s edge at sunset, from a Wedlock pre-wedding shoot" sizes="(min-width: 768px) 640px, 100vw" priority className="h-full min-h-[300px] w-full object-cover md:min-h-[440px]" />
       <div className="flex flex-col justify-center gap-4 p-7 sm:p-12">
         <span className="self-start rounded-[2px] bg-ivory px-3.5 py-1.5 text-[13px] font-medium">{FEATURED.label}</span>
@@ -28,9 +28,11 @@ export default function Journal() {
   );
 
   const cards = POSTS.map((p) => (
-    <Link key={p.title} href={postHref(p.title)} className="flex flex-col gap-3 no-underline">
+    <Link key={p.title} href={postHref(p.title)} className="zoom flex flex-col gap-3 no-underline">
       {p.img ? (
-        <Picture slug={p.img} alt={p.alt ?? ""} sizes="(min-width: 1024px) 400px, (min-width: 768px) 50vw, 100vw" className="block h-[240px] w-full rounded-[10px] object-cover" />
+        <div className="overflow-hidden rounded-[10px]">
+          <Picture slug={p.img} alt={p.alt ?? ""} sizes="(min-width: 1024px) 400px, (min-width: 768px) 50vw, 100vw" className="block h-[240px] w-full object-cover" />
+        </div>
       ) : (
         <PhotoToCome label={p.photoLabel ?? p.cat} className="h-[240px] rounded-[10px]" />
       )}
@@ -44,12 +46,12 @@ export default function Journal() {
     <PageShell active="journal" waMessage={WA_MESSAGE}>
       {/* HERO */}
       <section className="container-x flex flex-col gap-7 pb-7 pt-8 lg:pt-12">
-        <nav aria-label="Breadcrumb" className="text-sm text-fern">
+        <nav aria-label="Breadcrumb" className="enter text-sm text-fern">
           <Link href="/" className="text-fern">Home</Link> / Journal
         </nav>
         <div className="grid items-end gap-6 lg:grid-cols-2 lg:gap-10">
-          <h1 className="h1 m-0 text-[clamp(46px,6vw,84px)] leading-[1.02]">The Wedlock <em>Journal</em></h1>
-          <p className="m-0 text-lg text-fern sm:text-xl">
+          <h1 className="h1 enter-delay-1 m-0 text-[clamp(46px,6vw,84px)] leading-[1.02]">The Wedlock <em>Journal</em></h1>
+          <p className="enter-delay-2 m-0 text-lg text-fern sm:text-xl">
             Notes from the celebration desk — real celebrations we produced, planning blueprints we actually use, and the design directions our studio is chasing this season.
           </p>
         </div>
@@ -60,7 +62,7 @@ export default function Journal() {
 
       {/* DOWNLOAD */}
       <section aria-label="Free download" className="container-x pb-20 lg:pb-28">
-        <div className="grid items-center gap-10 rounded-lg bg-sage p-7 sm:p-14 lg:grid-cols-2">
+        <div className="reveal grid items-center gap-10 rounded-lg bg-sage p-7 sm:p-14 lg:grid-cols-2">
           <div className="flex flex-col gap-3">
             <span className="self-start rounded-[2px] bg-ivory px-3.5 py-1.5 text-[13px] font-medium">Free download</span>
             <h2 className="m-0 font-serif text-[clamp(32px,3.4vw,48px)] font-light leading-[1.1]">The destination wedding blueprint (PDF)</h2>

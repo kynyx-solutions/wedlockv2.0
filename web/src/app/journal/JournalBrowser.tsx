@@ -26,6 +26,8 @@ export function JournalBrowser({ meta, cards, featured }: Props) {
   const q = query.trim().toLowerCase();
   const visible = meta.map((m) => (!cat || m.cat === cat) && (!q || m.text.toLowerCase().includes(q)));
   const count = visible.filter(Boolean).length;
+  // 4 across when that fills rows better (7, 4, 8…), otherwise 3; the last row stretches either way.
+  const wide = count % 4 === 0 || count % 3 === 1;
 
   return (
     <>
@@ -40,7 +42,7 @@ export function JournalBrowser({ meta, cards, featured }: Props) {
                   type="button"
                   aria-pressed={on}
                   onClick={() => setCat(value)}
-                  className={`cursor-pointer rounded-[2px] px-[18px] py-[11px] text-[15px] ${on ? "bg-ink text-ivory" : "bg-stone text-ink hover:text-moss"}`}
+                  className={`cursor-pointer rounded-[2px] px-[18px] py-[11px] text-[15px] transition-colors duration-200 ${on ? "bg-ink text-ivory" : "bg-stone text-ink hover:text-moss"}`}
                 >
                   {label}
                 </button>
@@ -67,7 +69,8 @@ export function JournalBrowser({ meta, cards, featured }: Props) {
         <p aria-live="polite" className={count ? "sr-only" : "m-0 text-fern"}>
           {count ? `${count} articles` : "No articles match yet. Try another category or search."}
         </p>
-        <div className="grid gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+        {/* Fill-row: hidden cards drop out and the last row stretches, so any result fills the width */}
+        <div className={`fill-row reveal-stagger gap-y-8 [--gap:24px] md:[--cols:2] ${wide ? "lg:[--cols:4]" : "lg:[--cols:3]"}`}>
           {cards.map((card, i) => (
             <div key={i} hidden={!visible[i]}>{card}</div>
           ))}

@@ -37,7 +37,7 @@ export function EnquiryForm() {
   const label = "flex flex-col gap-1.5 text-sm font-medium";
   const field = "field rounded";
   return (
-    <form onSubmit={onSubmit} aria-label="Wedding enquiry" className="grid gap-3.5 rounded-lg bg-sage p-6 sm:grid-cols-2 sm:p-10">
+    <form onSubmit={onSubmit} aria-label="Wedding enquiry" className="enter-delay-2 grid gap-3.5 rounded-lg bg-sage p-6 sm:grid-cols-2 sm:p-10">
       <h2 className="m-0 font-serif text-[28px] font-normal sm:col-span-2">Wedding enquiry</h2>
       <label className={label}>Your name<input name="name" type="text" required autoComplete="name" className={field} /></label>
       <label className={label}>Partner’s name<input name="partner" type="text" className={field} /></label>

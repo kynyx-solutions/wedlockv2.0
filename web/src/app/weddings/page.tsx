@@ -85,7 +85,7 @@ function Card({ w }: { w: Item }) {
     </>
   );
   return w.href ? (
-    <Link href={w.href} className="flex flex-col gap-3 no-underline">{body}</Link>
+    <Link href={w.href} className="zoom flex flex-col gap-3 no-underline">{body}</Link>
   ) : (
     <div className="flex flex-col gap-3">{body}</div>
   );
@@ -96,12 +96,12 @@ export default function WeddingsPage() {
     <PageShell active="weddings" waMessage={WA_MESSAGE}>
       {/* HERO */}
       <section className="container-x flex flex-col gap-7 pb-12 pt-6 lg:pt-12">
-        <nav aria-label="Breadcrumb" className="text-sm text-fern">
+        <nav aria-label="Breadcrumb" className="enter text-sm text-fern">
           <Link href="/" className="text-fern">Home</Link> / Weddings
         </nav>
         <div className="grid items-end gap-6 lg:grid-cols-2 lg:gap-10">
-          <h1 className="m-0 font-serif text-[clamp(46px,6vw,84px)] font-light leading-[1.02] tracking-[-0.025em]">650+ celebrations. <em>Here are a few.</em></h1>
-          <p className="m-0 text-[19px] text-fern sm:text-xl">Proof, not promises — celebrations we have actually produced. Every photograph here is from a Wedlock wedding.</p>
+          <h1 className="enter-delay-1 m-0 font-serif text-[clamp(46px,6vw,84px)] font-light leading-[1.02] tracking-[-0.025em]">650+ celebrations. <em>Here are a few.</em></h1>
+          <p className="enter-delay-2 m-0 text-[19px] text-fern sm:text-xl">Proof, not promises — celebrations we have actually produced. Every photograph here is from a Wedlock wedding.</p>
         </div>
       </section>
 
@@ -113,13 +113,13 @@ export default function WeddingsPage() {
       {/* FILMS */}
       <section className="bg-ink text-ivory">
         <div className="container-x flex flex-col gap-10 py-20 lg:py-28">
-          <div className="flex flex-wrap items-end justify-between gap-4">
+          <div className="reveal flex flex-wrap items-end justify-between gap-4">
             <h2 className="m-0 font-serif text-[clamp(36px,4vw,58px)] font-light leading-[1.08]">Wedding <em>films</em></h2>
-            <a href={SITE.social.youtube} className="py-2.5 font-medium text-ivory">Watch on YouTube →</a>
+            <a href={SITE.social.youtube} className="py-2.5 font-medium text-ivory"><span className="underline-grow">Watch on YouTube</span> →</a>
           </div>
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="reveal-stagger grid gap-5 md:grid-cols-3">
             {FILMS.map((f) => (
-              <a key={f.title} href={SITE.social.youtube} className="flex flex-col gap-3 text-ivory no-underline hover:text-mist">
+              <a key={f.title} href={SITE.social.youtube} className="zoom flex flex-col gap-3 text-ivory no-underline hover:text-mist">
                 <div className="relative flex h-[240px] items-center justify-center overflow-hidden rounded-[10px] bg-fern">
                   <Picture slug={f.img} alt="" sizes="(min-width: 768px) 400px, 100vw" position={f.pos} className="absolute inset-0 h-full w-full object-cover" />
                   <span aria-hidden="true" className="relative flex h-16 w-16 items-center justify-center rounded-full bg-ivory">
@@ -136,14 +136,14 @@ export default function WeddingsPage() {
 
       {/* REVIEWS WALL */}
       <section className="container-x flex flex-col gap-10 py-20 lg:py-28">
-        <div className="flex flex-wrap items-end justify-between gap-4">
+        <div className="reveal flex flex-wrap items-end justify-between gap-4">
           <h2 className="h2 m-0">What families say</h2>
           <div className="flex flex-wrap gap-3 text-[15px]">
             <a href={SITE.social.instagram} className="rounded-[2px] bg-stone px-4 py-2.5 no-underline">@wedlockweddings on Instagram</a>
             <a href={SITE.social.facebook} className="rounded-[2px] bg-stone px-4 py-2.5 no-underline">Facebook reviews</a>
           </div>
         </div>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="reveal-stagger grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {REVIEWS.map(([q, who, where]) => (
             <figure key={q} className="m-0 flex flex-col gap-3 rounded-[10px] bg-stone p-[26px]">
               <blockquote className="m-0 text-base">“{q}”</blockquote>
@@ -155,7 +155,7 @@ export default function WeddingsPage() {
 
       {/* CTA */}
       <section className="container-x pb-20 lg:pb-28">
-        <div className="flex flex-wrap items-center justify-between gap-8 rounded-lg bg-moss p-7 text-ivory sm:px-14 sm:py-16">
+        <div className="reveal flex flex-wrap items-center justify-between gap-8 rounded-lg bg-moss p-7 text-ivory sm:px-14 sm:py-16">
           <h2 className="m-0 max-w-[14em] font-serif text-[clamp(32px,3.6vw,52px)] font-light leading-[1.08]">Your story could be next.</h2>
           <Link href="/contact" className="rounded-[2px] bg-ivory px-8 py-[18px] font-medium text-ink no-underline">Start planning</Link>
         </div>

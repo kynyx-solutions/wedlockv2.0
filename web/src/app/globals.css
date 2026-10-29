@@ -141,6 +141,22 @@
 }
 
 @layer components {
+  /* ───────────── Fill-row grid (for filtered / variable-count lists) ─────────────
+     Like a grid with --cols columns, but the last row stretches to fill the full
+     width, so filtered results never leave an empty slot. Set columns per
+     breakpoint with e.g. `fill-row md:[--cols:2] lg:[--cols:3]`; gap via --gap. */
+  .fill-row {
+    --cols: 1;
+    --gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+  }
+  .fill-row > * {
+    flex: 1 1 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols) - 1px);
+    min-width: 0;
+  }
+
   .btn,
   .btn-soft {
     transition:
@@ -232,3 +248,4 @@
     }
   }
 }
+

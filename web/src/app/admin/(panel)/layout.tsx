@@ -59,7 +59,7 @@ export default function AdminPanelLayout({ children }: { children: React.ReactNo
         <div className="mb-6 rounded border border-line bg-stone px-4 py-2.5 text-[13px] text-fern">
           Demo mode · sample data · nothing is saved yet. Buttons show how each screen will work.
         </div>
-        {children}
+        <div className="enter">{children}</div>
       </main>
     </div>
   );

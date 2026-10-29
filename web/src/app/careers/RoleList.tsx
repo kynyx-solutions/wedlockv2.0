@@ -20,7 +20,7 @@ export function RoleList({ roles }: { roles: Role[] }) {
   const select = "rounded-[2px] border-none bg-stone px-4 py-[11px] text-[15px] text-ink";
   return (
     <>
-      <div className="flex flex-wrap items-end justify-between gap-4">
+      <div className="reveal flex flex-wrap items-end justify-between gap-4">
         <h2 className="h2 m-0">Open roles</h2>
         <div className="flex flex-wrap gap-2.5">
           <label className="flex items-center gap-2 text-sm text-fern">
@@ -40,14 +40,14 @@ export function RoleList({ roles }: { roles: Role[] }) {
         </div>
       </div>
 
-      <ul aria-live="polite" className="m-0 flex list-none flex-col gap-2.5 p-0">
+      <ul aria-live="polite" className="reveal-stagger m-0 flex list-none flex-col gap-2.5 p-0">
         {shown.map((r) => (
           <li key={r.title}>
             <a
               href={waLink(applyMessage(r))}
               target="_blank"
               rel="noopener"
-              className="grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-1 rounded-lg bg-stone px-5 py-5 no-underline sm:px-7 md:grid-cols-[minmax(0,2.4fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_auto] md:gap-4"
+              className="lift grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-1 rounded-lg bg-stone px-5 py-5 no-underline sm:px-7 md:grid-cols-[minmax(0,2.4fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_auto] md:gap-4"
             >
               <span className="font-serif text-[22px] leading-tight">{r.title}</span>
               <span className="row-span-2 rounded-[2px] bg-ivory px-[18px] py-2.5 text-sm font-medium md:order-last md:row-span-1">

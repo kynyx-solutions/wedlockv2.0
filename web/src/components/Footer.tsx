@@ -66,7 +66,7 @@ export function Footer() {
             <nav key={col.title} aria-label={col.title} className="flex flex-col gap-2">
               <span className="mb-1 text-xs font-medium uppercase tracking-[0.16em] text-ivory">{col.title}</span>
               {col.links.map(([label, href]) => (
-                <Link key={label} href={href} className="no-underline hover:text-ivory">{label}</Link>
+                <Link key={label} href={href} className="self-start no-underline hover:text-ivory"><span className="underline-grow">{label}</span></Link>
               ))}
             </nav>
           ))}

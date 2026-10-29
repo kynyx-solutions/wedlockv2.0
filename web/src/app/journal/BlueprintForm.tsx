@@ -18,7 +18,7 @@ export function BlueprintForm() {
           <span className="sr-only">Email address</span>
           <input name="email" type="email" required autoComplete="email" placeholder="Your email address" className="field px-5 py-4" />
         </label>
-        <button type="submit" className="w-full cursor-pointer rounded-[2px] bg-moss px-[26px] py-4 text-[15px] font-medium text-ivory hover:bg-ink sm:w-auto">
+        <button type="submit" className="w-full cursor-pointer rounded-[2px] bg-moss px-[26px] py-4 text-[15px] font-medium text-ivory transition-colors duration-200 hover:bg-ink sm:w-auto">
           Send me the PDF
         </button>
       </form>

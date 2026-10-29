@@ -10,7 +10,8 @@ import { CopyLink } from "./CopyLink";
 
 type Props = { params: Promise<{ slug: string }> };
 
-export const dynamicParams = false;
+// Known slugs are prerendered; unknown ones may block and then 404 (dynamicParams is incompatible with cacheComponents).
+export const instant = false;
 
 export function generateStaticParams() {
   return ARTICLES.map((a) => ({ slug: a.slug }));
@@ -39,7 +40,7 @@ const TIMELINE_RELATED = [
 ].map(slugify);
 
 function related(a: Article) {
-  if (a.slug === TIMELINE_SLUG) return TIMELINE_RELATED.map((s) => getArticle(s)!).filter(Boolean);
+  if (a.slug === TIMELINE_SLUG) return TIMELINE_RELATED.flatMap((s) => getArticle(s) ?? []);
   const others = ARTICLES.filter((o) => o.slug !== a.slug);
   return [...others.filter((o) => o.cat === a.cat), ...others.filter((o) => o.cat !== a.cat)].slice(0, 3);
 }

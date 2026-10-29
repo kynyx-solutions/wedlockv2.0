@@ -19,6 +19,8 @@ const OPTS: [WeddingKind | "all", string][] = [
 export function WeddingsGrid({ cards }: { cards: { key: string; type: WeddingKind; node: React.ReactNode }[] }) {
   const [filter, setFilter] = useState<WeddingKind | "all">("all");
   const shown = cards.filter((c) => filter === "all" || c.type === filter);
+  // 4 across when that fills rows better (19, 4, 7…), otherwise 3; the last row stretches either way.
+  const wide = shown.length % 4 === 0 || shown.length % 3 === 1;
 
   return (
     <>
@@ -30,7 +32,7 @@ export function WeddingsGrid({ cards }: { cards: { key: string; type: WeddingKin
               type="button"
               aria-pressed={filter === key}
               onClick={() => setFilter(key)}
-              className={`cursor-pointer rounded-[2px] px-[18px] py-[11px] text-[15px] ${filter === key ? "bg-ink text-ivory" : "bg-stone text-ink"}`}
+              className={`cursor-pointer rounded-[2px] px-[18px] py-[11px] text-[15px] transition-colors duration-200 ${filter === key ? "bg-ink text-ivory" : "bg-stone text-ink"}`}
             >
               {label}
             </button>
@@ -40,7 +42,8 @@ export function WeddingsGrid({ cards }: { cards: { key: string; type: WeddingKin
           {shown.length} {shown.length === 1 ? "celebration" : "celebrations"}
         </span>
       </div>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Fill-row: the last row stretches, so any filter result fills the width */}
+      <div className={`fill-row reveal-stagger [--gap:24px] sm:[--cols:2] ${wide ? "lg:[--cols:4]" : "lg:[--cols:3]"}`}>
         {shown.map((c) => (
           <div key={c.key} className="flex flex-col">
             {c.node}

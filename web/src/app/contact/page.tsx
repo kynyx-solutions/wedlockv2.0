@@ -45,18 +45,18 @@ export default function Contact() {
       {/* HERO + FORM */}
       <section className="container-x grid items-start gap-12 pb-20 pt-8 lg:grid-cols-2 lg:pb-28 lg:pt-12">
         <div className="flex flex-col gap-6">
-          <nav aria-label="Breadcrumb" className="text-sm text-fern">
+          <nav aria-label="Breadcrumb" className="enter text-sm text-fern">
             <Link href="/" className="text-fern">Home</Link> / Contact
           </nav>
-          <h1 className="h1 m-0 text-[clamp(46px,5.6vw,80px)] leading-[1.02]">Let’s plan something <em>lovely.</em></h1>
-          <p className="m-0 text-[19px] text-fern">Tell us a little about your wedding. A senior planner will call you within 24 hours to set up a free consultation — at our studio, your home or on video.</p>
-          <div className="grid grid-cols-2 gap-3">
+          <h1 className="h1 enter-delay-1 m-0 text-[clamp(46px,5.6vw,80px)] leading-[1.02]">Let’s plan something <em>lovely.</em></h1>
+          <p className="enter-delay-2 m-0 text-[19px] text-fern">Tell us a little about your wedding. A senior planner will call you within 24 hours to set up a free consultation — at our studio, your home or on video.</p>
+          <div className="enter-delay-3 grid grid-cols-2 gap-3">
             {CHANNELS.map((c) => (
               <a
                 key={c.title}
                 href={c.href}
                 {...(c.external ? { target: "_blank", rel: "noopener" } : {})}
-                className="flex min-w-0 flex-col gap-1.5 rounded-lg bg-stone p-4 no-underline sm:p-5"
+                className="lift flex min-w-0 flex-col gap-1.5 rounded-lg bg-stone p-4 no-underline sm:p-5"
               >
                 {c.svg}
                 <span className="font-medium">{c.title}</span>
@@ -72,8 +72,8 @@ export default function Contact() {
       {/* OFFICES */}
       <section id="offices" className="scroll-mt-6 bg-stone">
         <div className="container-x flex flex-col gap-10 py-20 lg:py-28">
-          <h2 className="h2 m-0">Our studios</h2>
-          <div className="grid gap-5 lg:grid-cols-2">
+          <h2 className="reveal h2 m-0">Our studios</h2>
+          <div className="reveal grid gap-5 lg:grid-cols-2">
             <div className="flex min-h-[280px] items-end rounded bg-placeholder p-5 sm:min-h-[520px]">
               <span className="text-[13px] text-ink">Map · Patna HQ, Dak Bunglow Road (25.5941° N, 85.1376° E)</span>
             </div>
@@ -83,7 +83,7 @@ export default function Contact() {
                   <h3 className="m-0 font-serif text-[22px] font-normal">{o.city}</h3>
                   <span className="text-[13px] font-semibold uppercase tracking-[0.08em] text-gold">{o.tag}</span>
                   <span className="text-sm text-fern">{o.address}<br />{o.phone}</span>
-                  <a href="#" className="mt-1.5 text-sm font-medium">Directions →</a>
+                  <a href="#" className="mt-1.5 self-start text-sm font-medium"><span className="underline-grow">Directions</span> →</a>
                 </div>
               ))}
             </div>
@@ -93,13 +93,13 @@ export default function Contact() {
 
       {/* FAQ */}
       <section className="container-x grid gap-12 py-20 lg:grid-cols-3 lg:py-28">
-        <div className="flex flex-col gap-3.5">
+        <div className="reveal flex flex-col gap-3.5">
           <h2 className="h2 m-0">Frequently asked</h2>
           <p className="m-0 text-fern">
             Still curious? <a href={waLink(WA_MESSAGE)} target="_blank" rel="noopener">WhatsApp us</a> — a planner, not a bot, will answer.
           </p>
         </div>
-        <div className="flex min-w-0 flex-col gap-2.5 lg:col-span-2">
+        <div className="reveal flex min-w-0 flex-col gap-2.5 lg:col-span-2">
           {FAQS.map(([q, a], i) => (
             <details key={q} open={i === 0} className="rounded-lg bg-stone px-[26px] py-[22px]">
               <summary className="cursor-pointer list-none font-serif text-[21px]">{q}</summary>
@@ -111,12 +111,12 @@ export default function Contact() {
 
       {/* VENDOR */}
       <section className="container-x pb-20 lg:pb-28">
-        <div className="flex flex-wrap items-center justify-between gap-8 rounded-lg bg-ink p-7 text-ivory sm:p-14">
+        <div className="reveal flex flex-wrap items-center justify-between gap-8 rounded-lg bg-ink p-7 text-ivory sm:p-14">
           <div className="flex max-w-[640px] flex-col gap-2.5">
             <h2 className="m-0 font-serif text-[clamp(30px,3.2vw,44px)] font-light leading-[1.1]">Are you a vendor or venue?</h2>
             <span className="text-mist">Join the Wedlock vendor network — decorators, caterers, artists and venues across 40+ cities.</span>
           </div>
-          <Link href="/partner" className="rounded-[2px] bg-ivory px-[30px] py-[17px] font-medium text-ink no-underline hover:text-moss">Become a partner</Link>
+          <Link href="/partner" className="rounded-[2px] bg-ivory px-[30px] py-[17px] font-medium text-ink no-underline transition-colors duration-200 hover:text-moss">Become a partner</Link>
         </div>
       </section>
     </PageShell>

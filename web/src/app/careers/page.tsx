@@ -45,13 +45,13 @@ export default function Careers() {
       {/* HERO */}
       <section className="container-x grid items-center gap-12 pb-20 pt-8 lg:grid-cols-2 lg:pb-24 lg:pt-12">
         <div className="flex flex-col gap-6">
-          <nav aria-label="Breadcrumb" className="text-sm text-fern">
+          <nav aria-label="Breadcrumb" className="enter text-sm text-fern">
             <Link href="/" className="text-fern">Home</Link> / Careers
           </nav>
-          <span className="eyebrow">We’re hiring · [N] open roles</span>
-          <h1 className="h1 m-0 text-[clamp(46px,5.6vw,80px)] leading-[1.02]">Build the most important days <em>of people’s lives.</em></h1>
-          <p className="m-0 text-[19px] text-fern">Join our planners, stylists, carpenters, light designers, choreographers and travel agents in Patna, Ranchi and New Delhi.</p>
-          <a href="#roles" className="self-start rounded-[2px] bg-moss px-[30px] py-[17px] font-medium text-ivory no-underline hover:bg-ink hover:text-ivory">See open roles</a>
+          <span className="enter eyebrow">We’re hiring · [N] open roles</span>
+          <h1 className="h1 enter-delay-1 m-0 text-[clamp(46px,5.6vw,80px)] leading-[1.02]">Build the most important days <em>of people’s lives.</em></h1>
+          <p className="enter-delay-2 m-0 text-[19px] text-fern">Join our planners, stylists, carpenters, light designers, choreographers and travel agents in Patna, Ranchi and New Delhi.</p>
+          <a href="#roles" className="enter-delay-3 self-start rounded-[2px] bg-moss px-[30px] py-[17px] font-medium text-ivory no-underline transition-colors duration-200 hover:bg-ink hover:text-ivory">See open roles</a>
         </div>
         <div className="grid grid-cols-2 gap-3">
           <Picture
@@ -78,8 +78,8 @@ export default function Careers() {
       {/* PERKS */}
       <section className="bg-stone">
         <div className="container-x flex flex-col gap-12 py-20 lg:py-28">
-          <h2 className="h2 m-0">Why people stay</h2>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <h2 className="reveal h2 m-0">Why people stay</h2>
+          <div className="reveal-stagger grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {PERKS.map(([title, text]) => (
               <article key={title} className="flex flex-col gap-2.5 rounded-[10px] bg-ivory p-7">
                 <h3 className="m-0 font-serif text-[22px] font-normal">{title}</h3>
@@ -97,7 +97,7 @@ export default function Careers() {
 
       {/* PROCESS */}
       <section className="container-x pb-20 lg:pb-28">
-        <div className="flex flex-col gap-10 rounded-lg bg-ink px-7 py-14 text-ivory sm:px-14 sm:py-16">
+        <div className="reveal flex flex-col gap-10 rounded-lg bg-ink px-7 py-14 text-ivory sm:px-14 sm:py-16">
           <h2 className="m-0 font-serif text-[clamp(32px,3.4vw,48px)] font-light">How we hire</h2>
           <ol className="m-0 grid list-none gap-7 p-0 sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map(([title, text], i) => {
@@ -116,12 +116,12 @@ export default function Careers() {
 
       {/* INTERNSHIP */}
       <section className="container-x pb-20 lg:pb-28">
-        <div className="flex flex-wrap items-center justify-between gap-8 rounded-lg bg-sage p-7 sm:p-14">
+        <div className="reveal flex flex-wrap items-center justify-between gap-8 rounded-lg bg-sage p-7 sm:p-14">
           <div className="flex max-w-[640px] flex-col gap-2.5">
             <h2 className="m-0 font-serif text-[clamp(30px,3.2vw,44px)] font-light leading-[1.1]">Wedlock Academy — season internships</h2>
             <span className="text-olive">A [6]-month programme for hospitality and design graduates. Applications open every [July].</span>
           </div>
-          <Link href="/contact" className="rounded-[2px] bg-moss px-[30px] py-[17px] font-medium text-ivory no-underline hover:bg-ink hover:text-ivory">Register interest</Link>
+          <Link href="/contact" className="rounded-[2px] bg-moss px-[30px] py-[17px] font-medium text-ivory no-underline transition-colors duration-200 hover:bg-ink hover:text-ivory">Register interest</Link>
         </div>
       </section>
     </PageShell>

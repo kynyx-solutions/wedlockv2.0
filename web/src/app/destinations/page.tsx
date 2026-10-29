@@ -32,7 +32,7 @@ export default function DestinationsPage() {
     key: d.name,
     type: d.type,
     node: (
-      <Link href="/services/destination-weddings" className="flex flex-grow flex-col overflow-hidden rounded-[4px] bg-stone no-underline hover:text-ink">
+      <Link href="/services/destination-weddings" className="lift zoom flex flex-grow flex-col overflow-hidden rounded-[4px] bg-stone no-underline hover:text-ink">
         <div className="relative h-[260px]">
           <PhotoToCome label={d.name} className="absolute inset-0" />
           <span className="absolute left-4 top-4 rounded-[2px] bg-ivory px-3 py-1.5 text-[13px] font-medium">{LABELS[d.type]}</span>
@@ -56,18 +56,18 @@ export default function DestinationsPage() {
     <PageShell active="destinations" waMessage={WA_MESSAGE}>
       {/* HERO */}
       <section className="container-x flex flex-col gap-7 pb-14 pt-6 lg:pt-12">
-        <nav aria-label="Breadcrumb" className="text-sm text-fern">
+        <nav aria-label="Breadcrumb" className="enter text-sm text-fern">
           <Link href="/" className="text-fern">Home</Link> / Destinations
         </nav>
         <div className="grid items-end gap-6 lg:grid-cols-2 lg:gap-10">
-          <h1 className="m-0 font-serif text-[clamp(46px,6vw,84px)] font-light leading-[1.02] tracking-[-0.025em]">From palaces to beaches, <em>we know the way.</em></h1>
-          <p className="m-0 text-[19px] text-fern sm:text-xl">Eight of our most-produced destinations — and a destination desk that has scouted forty more, across 14 countries. Where should your story unfold?</p>
+          <h1 className="enter-delay-1 m-0 font-serif text-[clamp(46px,6vw,84px)] font-light leading-[1.02] tracking-[-0.025em]">From palaces to beaches, <em>we know the way.</em></h1>
+          <p className="enter-delay-2 m-0 text-[19px] text-fern sm:text-xl">Eight of our most-produced destinations — and a destination desk that has scouted forty more, across 14 countries. Where should your story unfold?</p>
         </div>
       </section>
 
       {/* FEATURED */}
       <section className="container-x pb-16 lg:pb-[72px]">
-        <Link href="/services/destination-weddings" className="grid overflow-hidden rounded-lg bg-ink text-ivory no-underline hover:text-ivory lg:grid-cols-2">
+        <Link href="/services/destination-weddings" className="enter-delay-3 lift zoom grid overflow-hidden rounded-lg bg-ink text-ivory no-underline hover:text-ivory lg:grid-cols-2">
           <PhotoToCome label="Udaipur & Jaipur" className="min-h-[300px] lg:min-h-[480px]" />
           <div className="flex flex-col justify-center gap-[18px] p-7 sm:p-12">
             <span className="self-start rounded-[2px] bg-ink-2 px-3.5 py-1.5 text-[13px] font-medium text-mist-2">Signature · Rajasthan</span>
@@ -99,7 +99,7 @@ export default function DestinationsPage() {
       <section className="bg-stone">
         <div className="container-x flex flex-col items-center gap-7 py-16 text-center lg:py-[72px]">
           <span className="text-sm text-fern">Every destination comes with</span>
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 font-serif text-[22px] text-fern">
+          <div className="reveal flex flex-wrap justify-center gap-x-12 gap-y-4 font-serif text-[22px] text-fern">
             {PROMISES.map((p) => <span key={p}>{p}</span>)}
           </div>
         </div>
@@ -107,12 +107,12 @@ export default function DestinationsPage() {
 
       {/* CTA */}
       <section className="container-x py-20 lg:py-28">
-        <div className="flex flex-wrap items-center justify-between gap-8 rounded-lg bg-sage p-7 sm:px-14 sm:py-16">
+        <div className="reveal flex flex-wrap items-center justify-between gap-8 rounded-lg bg-sage p-7 sm:px-14 sm:py-16">
           <div className="flex max-w-[640px] flex-col gap-2.5">
             <h2 className="m-0 font-serif text-[clamp(32px,3.6vw,52px)] font-light leading-[1.08]">Can’t decide where?</h2>
             <span className="text-olive">Share your guest count, budget and season. We’ll send three costed destination options within 72 hours.</span>
           </div>
-          <Link href="/contact" className="rounded-[2px] bg-moss px-8 py-[18px] font-medium text-ivory no-underline hover:text-ivory">Get destination options</Link>
+          <Link href="/contact" className="rounded-[2px] bg-moss px-8 py-[18px] font-medium text-ivory no-underline transition-colors duration-200 hover:bg-ink hover:text-ivory">Get destination options</Link>
         </div>
       </section>
     </PageShell>

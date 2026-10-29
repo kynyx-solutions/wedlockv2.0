@@ -27,6 +27,8 @@ const WA: Record<Filter, string> = {
 export function DestinationsGrid({ cards }: { cards: { key: string; type: DestinationKind; node: React.ReactNode }[] }) {
   const [filter, setFilter] = useState<Filter>("all");
   const shown = cards.filter((c) => filter === "all" || c.type === filter);
+  // 4 across when that fills rows better (8, 4, 7…), otherwise 3; the last row stretches either way.
+  const wide = shown.length % 4 === 0 || shown.length % 3 === 1;
 
   return (
     <>
@@ -38,7 +40,7 @@ export function DestinationsGrid({ cards }: { cards: { key: string; type: Destin
               type="button"
               aria-pressed={filter === key}
               onClick={() => setFilter(key)}
-              className={`cursor-pointer rounded-[2px] px-5 py-3 text-[15px] ${filter === key ? "bg-ink text-ivory" : "bg-stone text-ink"}`}
+              className={`cursor-pointer rounded-[2px] px-5 py-3 text-[15px] transition-colors duration-200 ${filter === key ? "bg-ink text-ivory" : "bg-stone text-ink"}`}
             >
               {label}
             </button>
@@ -46,14 +48,15 @@ export function DestinationsGrid({ cards }: { cards: { key: string; type: Destin
         </div>
         <span className="text-[15px] text-fern" aria-live="polite">{shown.length} destinations</span>
       </div>
-      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {/* Fill-row: the last row stretches, so any filter result fills the width */}
+      <div className={`fill-row reveal-stagger md:[--cols:2] ${wide ? "lg:[--cols:4]" : "lg:[--cols:3]"}`}>
         {shown.map((c) => (
           <div key={c.key} className="flex flex-col">
             {c.node}
           </div>
         ))}
       </div>
-      <a href={waLink(WA[filter])} target="_blank" rel="noopener" className="self-start font-medium">
+      <a href={waLink(WA[filter])} target="_blank" rel="noopener" className="underline-grow self-start font-medium">
         Ask about these destinations on WhatsApp →
       </a>
     </>
